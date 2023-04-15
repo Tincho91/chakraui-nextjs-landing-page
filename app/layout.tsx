@@ -20,7 +20,7 @@ export default function RootLayout({
         <Head>
           <link rel="stylesheet" href="/fonts.css" />
         </Head>
-          <Box minHeight="100vh" width="100%">
+          <Box minHeight="100vh" width="100%" overflowX={"hidden"}>
             <Navbar />
             {children}
             <Footer />

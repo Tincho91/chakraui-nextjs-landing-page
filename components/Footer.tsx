@@ -91,7 +91,7 @@ export default function Footer() {
       >
         <Text>Club Atlético Newell&apos;s Old Boys</Text>
         <Text>Copyright 2023. Todos los derechos reservados.</Text>
-        <Text>contacto@newellsoldboys.com.ar</Text>
+        <Text as={Link} href={'#'}>contacto@newellsoldboys.com.ar</Text>
       </Container>
     </Box>
   </>
