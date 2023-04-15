@@ -21,7 +21,7 @@ import {
 } from "@chakra-ui/icons";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 
-export default function WithSubnavigation() {
+export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
