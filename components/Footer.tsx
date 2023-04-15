@@ -50,12 +50,22 @@ export default function Footer() {
             </Stack>
             <Stack align={{base: 'center', md:'flex-end'}}>
               <Stack direction={'column'} gap={'5'}>
-                <Image
-                  src='/GooglePlayBadge.png'
-                />
-                <Image
-                  src='/AppStoreBadge.png'
-                />
+              <Image
+                src="/apple-app-store.png"
+                alt="Apple App Store Badge"
+                height="50px"
+                _hover={{
+                  filter: "brightness(120%)",
+                }}
+              />
+              <Image
+                src="/google-play-badge.png"
+                alt="Google Play Store Badge"
+                height="50px"
+                _hover={{
+                  filter: "brightness(120%)",
+                }}
+              />
               </Stack>
             </Stack>
           </SimpleGrid>
@@ -79,7 +89,7 @@ export default function Footer() {
         align={{ md: 'center' }}
         textAlign={'center'}
       >
-        <Text>Club Atlético Newell's Old Boys</Text>
+        <Text>Club Atlético Newell&apos;s Old Boys</Text>
         <Text>Copyright 2023. Todos los derechos reservados.</Text>
         <Text>contacto@newellsoldboys.com.ar</Text>
       </Container>

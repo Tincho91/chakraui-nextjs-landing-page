@@ -1,5 +1,7 @@
 "use client";
 import { ChakraProvider, Box } from "@chakra-ui/react";
+import Head from "next/head";
+
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -15,6 +17,9 @@ export default function RootLayout({
       <head />
       <body>
         <ChakraProvider theme={theme}>
+        <Head>
+          <link rel="stylesheet" href="/fonts.css" />
+        </Head>
           <Box minHeight="100vh" width="100%">
             <Navbar />
             {children}

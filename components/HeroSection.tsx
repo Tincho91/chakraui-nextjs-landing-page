@@ -18,10 +18,6 @@ export default function HeroSection() {
 
   return (
     <>
-      <Head>
-        <link rel="stylesheet" href="/fonts.css" />
-      </Head>
-
       <Container maxW={"95%"}>
         <Stack
           as={Box}
@@ -87,6 +83,7 @@ export default function HeroSection() {
           src="/hero-stadium.png"
           rounded='lg'
           width={"100%"}
+          alt='Estadio'
         />
       </Container>
     </>
