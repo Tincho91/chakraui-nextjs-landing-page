@@ -37,6 +37,8 @@ export default function Pasos() {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
   const isMobile = useBreakpointValue({ base: true, md: false });
+  const boxBgColor = useColorModeValue("white", "gray.700");
+  const stepNumberBgColor = useColorModeValue("red.500", "red.400");
 
   return (
     <Box bg={useColorModeValue("lightgray", "gray.800")}>
@@ -53,7 +55,7 @@ export default function Pasos() {
             fontSize={{ base: "18px", md: "40px", lg: "40px", xl: "60px" }}
             fontWeight={700}
           >
-          🤔 PASO A PASO
+            🤔 PASO A PASO
           </Text>
           <Heading
             fontFamily={"Acumin Bd Pro, sans-serif"}
@@ -79,7 +81,7 @@ export default function Pasos() {
             {stepsData.map((step, index) => (
               <Box
                 key={index}
-                bg={useColorModeValue("white", "gray.700")}
+                bg={boxBgColor} // use the variable here
                 boxShadow="md"
                 p={5}
                 position="relative"
@@ -89,7 +91,7 @@ export default function Pasos() {
                   top="-10px"
                   left="50%"
                   transform="translateX(-50%)"
-                  bg={useColorModeValue("red.500", "red.400")}
+                  bg={stepNumberBgColor} // use the variable here
                   borderRadius="full"
                   w="24px"
                   h="24px"
@@ -111,7 +113,6 @@ export default function Pasos() {
               </Box>
             ))}
           </Grid>
-
           <Stack direction="row" spacing={10} justifyContent={"center"}>
             <Button
               backgroundColor={useColorModeValue("white", "transparent")}
