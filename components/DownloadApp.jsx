@@ -8,13 +8,18 @@ import {
   Flex,
   ListItem,
   UnorderedList,
+  Image,
 } from "@chakra-ui/react";
-import SmartphoneCanvas from '../components/canvas/smartphone'
+import { CheckIcon } from "@chakra-ui/icons";
+import SmartphoneCanvas from "../components/canvas/smartphone";
 
-function Model() {
-  const gltf = useGLTF("/3dmodels/smartphone1/scene.gltf", true);
-  return <primitive object={gltf.scene} scale={0.5} />;
-}
+const listItems = [
+  "Accede a NFT exclusivos", 
+  "Tu credencial digital siempre actualizada", 
+  "Entérate de las últimas novedades", 
+  "Seguí al club desde tu celular",
+  "BENEFICIOS EN LA TIENDA"
+];
 
 export default function DownloadApp() {
   return (
@@ -46,9 +51,9 @@ export default function DownloadApp() {
             maxW={"100%"}
             fontSize={{ base: "22px", md: "24px", lg: "28px", xl: "30px" }}
           >
-            Contemplando las posibilidades económico financieras del club, y
-            con el objetivo de poder llegar a la concreción total de las obras,
-            se definieron una serie de etapas que se detallan a continuación.
+            Contemplando las posibilidades económico financieras del club, y con
+            el objetivo de poder llegar a la concreción total de las obras, se
+            definieron una serie de etapas que se detallan a continuación.
           </Text>
           <Flex direction={{ base: "column", md: "row" }}>
             <Box width={{ base: "100%", md: "50%" }}>
@@ -56,15 +61,43 @@ export default function DownloadApp() {
             </Box>
             <Box width={{ base: "100%", md: "50%" }}>
               <UnorderedList textAlign="left" mt={4} spacing={2}>
-                <ListItem>Item 1</ListItem>
-                <ListItem>Item 2</ListItem>
-                <ListItem>Item 3</ListItem>
-                <ListItem>Item 4</ListItem>
+                {listItems.map((item) => (
+                  <ListItem key={item} display="flex" alignItems="center" fontSize={{ base: "25px", md: "25px", lg: "30px", xl: "35px" }}>
+                    <CheckIcon
+                      boxSize={4}
+                      color="white"
+                      bg="green.500"
+                      borderRadius="full"
+                      mr={2}
+                    />
+                    {item}
+                  </ListItem>
+                ))}
               </UnorderedList>
+              <Text mt={4} fontWeight="bold">
+                ENCONTRALA EN
+              </Text>
+              <Flex
+                mt={4}
+                justifyContent={{ base: "space-between", md: "center" }}
+              >
+                <Image
+                  src="/apple-app-store.png"
+                  alt="Get it on the App Store"
+                  width={{ base: "40%", md: "120px" }}
+                  mr={{ md: 4 }}
+                />
+                <Image
+                  src="/google-play-badge.png"
+                  alt="Get it on Google Play"
+                  width={{ base: "40%", md: "120px" }}
+                  ml={{ md: 4 }}
+                />
+              </Flex>
             </Box>
           </Flex>
         </Stack>
-        </Container>
+      </Container>
     </>
   );
 }
