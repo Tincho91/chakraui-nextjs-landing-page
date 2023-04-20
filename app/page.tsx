@@ -6,6 +6,7 @@ import Beneficios from "@/components/Beneficios"
 import Pasos from "@/components/Pasos"
 import DownloadApp from "@/components/DownloadApp"
 
+
 export default function Home() {
   return (
     <>

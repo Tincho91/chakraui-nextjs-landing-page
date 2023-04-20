@@ -1,8 +1,33 @@
-import { Suspense, useEffect, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
-import CanvasLoader from './loader'
+import { Suspense, useEffect, useState } from "react";
+import { Canvas, useThree } from "@react-three/fiber";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import Loader from "./loader";
 
+const ResizeHandler = ({ containerRef }) => {
+  const { setSize, camera } = useThree();
+
+  useEffect(() => {
+    if (containerRef.current) {
+      const updateDimensions = () => {
+        const width = containerRef.current.clientWidth;
+        const height = containerRef.current.clientHeight;
+
+        setSize(width, height);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+      };
+
+      updateDimensions();
+      window.addEventListener("resize", updateDimensions);
+
+      return () => {
+        window.removeEventListener("resize", updateDimensions);
+      };
+    }
+  }, [containerRef, setSize, camera]);
+
+  return null;
+};
 
 const Smartphone = (props) => {
   const smartphone = useGLTF("/3dmodels/smartphone1/scene.gltf");
@@ -17,9 +42,10 @@ const Smartphone = (props) => {
   );
 };
 
-const SmartphoneCanvas = () => {
+const SmartphoneCanvas = ({ containerRef, colorMode }) => {
   const [rotation, setRotation] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [dimensions, setDimensions] = useState({ width: 1, height: 1 });
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -31,18 +57,37 @@ const SmartphoneCanvas = () => {
         }
         return prevRotation + direction * 0.01;
       });
-    }, 16); // update every 16ms for smoother animation
+    }, 16);
 
     return () => {
       clearInterval(intervalId);
     };
   }, [direction]);
 
+  useEffect(() => {
+    if (containerRef.current) {
+      const updateDimensions = () => {
+        setDimensions({
+          width: containerRef.current.clientWidth,
+          height: containerRef.current.clientHeight,
+        });
+      };
+
+      updateDimensions();
+      window.addEventListener("resize", updateDimensions);
+
+      return () => {
+        window.removeEventListener("resize", updateDimensions);
+      };
+    }
+  }, [containerRef]);
+
   return (
     <Canvas
-      shadows
-      frameloop="demand"
-      gl={{ preserveDrawingBuffer: true }}
+      style={{
+        width: dimensions.width,
+        height: dimensions.height,
+      }}
       camera={{
         fov: 60,
         near: 0.1,
@@ -50,7 +95,8 @@ const SmartphoneCanvas = () => {
         position: [-5, 2.5, 7],
       }}
     >
-      <Suspense fallback={<CanvasLoader />}>
+      <ResizeHandler containerRef={containerRef} />
+      <Suspense fallback={<Loader />}>
         <OrbitControls
           autoRotate={false}
           enableZoom={false}
@@ -59,6 +105,7 @@ const SmartphoneCanvas = () => {
           minPolarAngle={Math.PI / 2}
           enabled={false}
         />
+        <ambientLight intensity={0.5} />
         <Smartphone rotation={rotation} />
       </Suspense>
     </Canvas>

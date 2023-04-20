@@ -4,6 +4,7 @@ import {
   Container,
   Stack,
   Text,
+  useColorMode,
   useColorModeValue,
   Flex,
   ListItem,
@@ -11,17 +12,26 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
+import { useRef } from "react";
 import SmartphoneCanvas from "../components/canvas/smartphone";
 
 const listItems = [
-  "Accede a NFT exclusivos", 
-  "Tu credencial digital siempre actualizada", 
-  "Entérate de las últimas novedades", 
+  "Accede a NFT exclusivos",
+  "Tu credencial digital siempre actualizada",
+  "Entérate de las últimas novedades",
   "Seguí al club desde tu celular",
-  "BENEFICIOS EN LA TIENDA"
+  "BENEFICIOS EN LA TIENDA",
 ];
 
 export default function DownloadApp() {
+  const containerRef = useRef();
+  const { colorMode } = useColorMode();
+
+  const bgGradient = useColorModeValue(
+    "radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%)",
+    "radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 60%)"
+  );
+
   return (
     <>
       <Container maxW={"95%"}>
@@ -43,7 +53,7 @@ export default function DownloadApp() {
               fontVariationSettings: "'wght' 700, 'wdth' 50, 'slnt' 0",
             }}
           >
-            ETAPABILIDAD
+            DESCARGA LA APP
           </Heading>
           <Text
             flexDir={"row"}
@@ -56,15 +66,30 @@ export default function DownloadApp() {
             definieron una serie de etapas que se detallan a continuación.
           </Text>
           <Flex direction={{ base: "column", md: "row" }}>
-            <Box width={{ base: "100%", md: "50%" }}>
-              <SmartphoneCanvas />
+            <Box
+              ref={containerRef}
+              minH={'300px'}
+              width={{ base: "100%", md: "50%" }}
+              bgImage={bgGradient}
+            >
+              <SmartphoneCanvas containerRef={containerRef}/>
             </Box>
             <Box width={{ base: "100%", md: "50%" }}>
               <UnorderedList textAlign="left" mt={4} spacing={2}>
                 {listItems.map((item) => (
-                  <ListItem key={item} display="flex" alignItems="center" fontSize={{ base: "25px", md: "25px", lg: "30px", xl: "35px" }}>
+                  <ListItem
+                    key={item}
+                    display="flex"
+                    alignItems="center"
+                    fontSize={{
+                      base: "25px",
+                      md: "25px",
+                      lg: "30px",
+                      xl: "35px",
+                    }}
+                  >
                     <CheckIcon
-                      boxSize={4}
+                      boxSize={5}
                       color="white"
                       bg="green.500"
                       borderRadius="full"
@@ -84,13 +109,11 @@ export default function DownloadApp() {
                 <Image
                   src="/apple-app-store.png"
                   alt="Get it on the App Store"
-                  width={{ base: "40%", md: "120px" }}
                   mr={{ md: 4 }}
                 />
                 <Image
                   src="/google-play-badge.png"
                   alt="Get it on Google Play"
-                  width={{ base: "40%", md: "120px" }}
                   ml={{ md: 4 }}
                 />
               </Flex>
