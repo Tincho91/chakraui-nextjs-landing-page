@@ -87,6 +87,7 @@ const SmartphoneCanvas = ({ containerRef, colorMode }) => {
       style={{
         width: dimensions.width,
         height: dimensions.height,
+        pointerEvents: "none",
       }}
       camera={{
         fov: 60,
@@ -94,6 +95,9 @@ const SmartphoneCanvas = ({ containerRef, colorMode }) => {
         far: 200,
         position: [-5, 2.5, 7],
       }}
+      onTouchMove={(event) => {
+      event.preventDefault();
+    }}
     >
       <ResizeHandler containerRef={containerRef} />
       <Suspense fallback={<Loader />}>
