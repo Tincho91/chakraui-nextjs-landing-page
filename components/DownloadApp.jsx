@@ -14,6 +14,7 @@ import {
 import { CheckIcon } from "@chakra-ui/icons";
 import { useRef } from "react";
 import SmartphoneCanvas from "../components/canvas/smartphone";
+import Link from "next/link";
 
 const listItems = [
   "Accede a NFT exclusivos",
@@ -28,8 +29,8 @@ export default function DownloadApp() {
   const { colorMode } = useColorMode();
 
   const bgGradient = useColorModeValue(
-    "radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%)",
-    "radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 60%)"
+    "radial-gradient(circle at 50% 45%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%)",
+    "radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 60%)"
   );
 
   return (
@@ -106,16 +107,26 @@ export default function DownloadApp() {
                 mt={4}
                 justifyContent={{ base: "space-between", md: "center" }}
               >
-                <Image
-                  src="/apple-app-store.png"
-                  alt="Get it on the App Store"
-                  mr={{ md: 4 }}
-                />
+                <Link href={'/#'}>
+                  <Image
+                    src="/apple-app-store.png"
+                    alt="Apple App Store Badge"
+                    height="50px"
+                    _hover={{
+                      filter: "brightness(120%)",
+                    }}
+                  />
+                </Link>
+                <Link href={'/#'}>
                 <Image
                   src="/google-play-badge.png"
-                  alt="Get it on Google Play"
-                  ml={{ md: 4 }}
+                  alt="Google Play Store Badge"
+                  height="50px"
+                  _hover={{
+                    filter: "brightness(120%)",
+                  }}
                 />
+                </Link>
               </Flex>
             </Box>
           </Flex>
