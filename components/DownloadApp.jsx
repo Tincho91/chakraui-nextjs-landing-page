@@ -29,7 +29,7 @@ export default function DownloadApp() {
   const { colorMode } = useColorMode();
 
   const bgGradient = useColorModeValue(
-    "radial-gradient(circle at 50% 45%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%)",
+    "radial-gradient(circle at 50% 45%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%)",
     "radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 60%)"
   );
 
