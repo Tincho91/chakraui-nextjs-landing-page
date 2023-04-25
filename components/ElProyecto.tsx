@@ -14,7 +14,7 @@ import {
   useBreakpointValue
 } from "@chakra-ui/react"
 
-export default function SubHero2() {
+export default function ElProyecto() {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
@@ -22,7 +22,7 @@ export default function SubHero2() {
 
   return (
     <>
-      <Container maxW={"95%"}>
+      <Container width={"100%"} maxW={"1200px"}>
         <Stack
           as={Box}
           textAlign={"center"}
@@ -41,7 +41,7 @@ export default function SubHero2() {
               fontVariationSettings: "'wght' 700, 'wdth' 50, 'slnt' 0",
             }}
           >
-            ETAPABILIDAD
+            EL PROYECTO
           </Heading>
           <Text
             flexDir={'row'}
@@ -49,7 +49,7 @@ export default function SubHero2() {
             maxW={'100%'}
             fontSize={{ base: "22px", md: "24px", lg: "28px", xl: "30px" }}
           >
-            Contemplando las posibilidades económico financieras del club, y con el objetivo de poder llegar a la concreción total de las obras, se definieron una serie de etapas que se detallan a continuación.
+            El objetivo del proyecto es juntar fondos a través de la venta de metros cuadrados de la cancha para la actualización, refuncionalización y ampliación del estadio Coloso Marcelo Bielsa.
           </Text>
           <Stack
             direction="row"
@@ -71,7 +71,24 @@ export default function SubHero2() {
                 color: "white",
               }}
             >
-              VER ETAPABILIDAD
+              VER AVANCES
+            </Button>
+            <Button
+              backgroundColor={useColorModeValue("white", "transparent")}
+              color={useColorModeValue("black", "white")}
+              borderColor={useColorModeValue("black", "white")}
+              fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
+              paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
+              paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
+              borderWidth={1}
+              rounded={"md"}
+              _hover={{
+                bg: "red",
+                borderColor: "red",
+                color: "white",
+              }}
+            >
+              VER NIVEL DE COLECTA
             </Button>
           </Stack>
           <Stack spacing={2}>
@@ -83,23 +100,24 @@ export default function SubHero2() {
               marginTop={'50px'}
             >
               <Image
-                src="/2024.png"
-                w="100%"
-                h="100%"
+                src="/17.png"
+                rounded="3xl"
+                width="100%"
                 objectFit="cover"
                 alt="Estadio"
               />
               <Image
-                src="/2028.png"
-                w="100%"
-                h="100%"
+                src="/2030.png"
+                rounded="3xl"
+                width="100%"
+                height={isMobile ? '100%' : '120%'}
                 objectFit="cover"
                 alt="Estadio"
               />
               <Image
-                src="/2030-2.png"
-                w="100%"
-                h="100%"
+                src="/21.png"
+                rounded="3xl"
+                width="100%"
                 objectFit="cover"
                 alt="Estadio"
               />

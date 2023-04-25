@@ -146,7 +146,7 @@ const DesktopNav = () => {
   const linkActiveUnderline = "2px";
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack direction={"row"} spacing={4} width={"100%"} maxW={"1200px"}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Link

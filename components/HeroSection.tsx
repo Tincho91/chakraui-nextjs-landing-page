@@ -10,14 +10,15 @@ import {
   useColorModeValue
 } from "@chakra-ui/react"
 
-export default function HeroSection() {
+
+const HeroSection = () => {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
 
   return (
     <>
-      <Container maxW={"95%"}>
+      <Container width={"100%"} maxW={"1200px"}>
         <Stack
           as={Box}
           textAlign={"center"}
@@ -88,3 +89,5 @@ export default function HeroSection() {
     </>
   )
 }
+
+export default HeroSection;

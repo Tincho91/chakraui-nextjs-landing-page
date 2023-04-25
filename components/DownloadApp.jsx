@@ -35,7 +35,7 @@ export default function DownloadApp() {
 
   return (
     <>
-      <Container maxW={"95%"}>
+      <Container width={"100%"} maxW={"1200px"}>
         <Stack
           as={Box}
           textAlign={"center"}

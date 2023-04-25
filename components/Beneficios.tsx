@@ -2,6 +2,7 @@ import {
   Grid,
   Box,
   Heading,
+  Container,
   Text,
   Flex,
   AspectRatio,
@@ -46,11 +47,13 @@ const Beneficios = () => {
   const columns = useBreakpointValue({ base: 2, md: 4 });
 
   return (
-    <Box bg="green.600" py={9} px={5} w="100%">
+    <Container bg="green.600" py={9} px={5} maxWidth={"100%"}>
       <Grid
         templateColumns={`repeat(${columns}, 1fr)`}
         gridColumnGap={0}
         gridRowGap={0}
+        maxW={"1200px"}
+        mx={"auto"}
       >
         <Box gridColumn="span 2" textAlign={{ base: 'center', md: 'left' }} pl='4'>
           <Heading fontSize={{ base: '60px', xl: '100px' }}>BENEFICIOS</Heading>
@@ -99,7 +102,7 @@ const Beneficios = () => {
           </AspectRatio>
         ))}
       </Grid>
-    </Box>
+    </Container>
   );
 };
 

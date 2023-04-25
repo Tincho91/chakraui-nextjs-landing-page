@@ -3,10 +3,11 @@ import { ChakraProvider, Box } from "@chakra-ui/react";
 import { useState, useEffect } from 'react'
 import Head from "next/head";
 
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
+import Preguntas from "@/components/Preguntas";
+import DownloadApp from "@/components/DownloadApp";
 import theme from "./theme";
 
 export default function RootLayout({
@@ -17,7 +18,7 @@ export default function RootLayout({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Timeout para pantalla de carga
+    // Timeout for the loading screen
     const timeout = setTimeout(() => setLoading(false), 100);
     return () => clearTimeout(timeout);
   }, []);
@@ -34,6 +35,8 @@ export default function RootLayout({
             {loading && <LoadingScreen />} {/* Render the loading screen */}
             <Navbar />
             {children}
+            <DownloadApp />
+            <Preguntas />
             <Footer />
           </Box>
         </ChakraProvider>

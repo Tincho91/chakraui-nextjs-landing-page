@@ -42,7 +42,7 @@ export default function Pasos() {
 
   return (
     <Box bg={useColorModeValue("lightgray", "gray.800")}>
-      <Container maxW={"95%"}>
+      <Container width={"100%"} maxW={"1200px"}>
         <Stack
           as={Box}
           textAlign={"center"}

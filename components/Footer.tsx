@@ -21,9 +21,8 @@ export default function Footer() {
       <Box
         bg={'gray.900'}
         color={'gray.100'}
-        marginTop={'20px'}
       >
-        <Container as={Stack} maxW={'90%'} py={10}>
+        <Container as={Stack} width={"100%"} maxW={"1200px"} py={10}>
           <SimpleGrid
             templateColumns={{ sm: '1fr 1fr', md: '1fr 1fr 1fr 5fr' }}
             spacing={9}
@@ -84,7 +83,6 @@ export default function Footer() {
       >
         <Container
           as={Stack}
-          maxW={'90%'}
           py={4}
           direction={{ base: 'column', md: 'row' }}
           spacing={4}
@@ -92,6 +90,8 @@ export default function Footer() {
           justifyContent={'center'}
           align={{ md: 'center' }}
           textAlign={'center'}
+          width={"100%"} 
+          maxW={"1200px"}
         >
           <Text>Club Atlético Newell&apos;s Old Boys</Text>
           <Text>Copyright 2023. Todos los derechos reservados.</Text>
