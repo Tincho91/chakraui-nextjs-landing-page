@@ -1,13 +1,10 @@
-import Head from "next/head"
 import {
   Box,
   Heading,
   Container,
   Button,
   Stack,
-  Grid,
   Text,
-  Image,
   useColorMode,
   useDisclosure,
   useColorModeValue,

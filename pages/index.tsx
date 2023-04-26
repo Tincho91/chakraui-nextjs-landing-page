@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import RootLayout from "@/app/layout";
 import HeroSection from "@/components/HeroSection";
 import ElProyecto from "@/components/ElProyecto";

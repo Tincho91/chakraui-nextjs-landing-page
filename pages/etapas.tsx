@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import RootLayout from "@/app/layout";
 // Import your Etapas-specific components here
 

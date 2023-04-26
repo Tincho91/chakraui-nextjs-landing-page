@@ -10,10 +10,8 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  useColorMode,
-  Icon,
+  useColorMode
 } from "@chakra-ui/react";
-import { ChevronDownIcon, CloseIcon } from "@chakra-ui/icons";
 
 const Preguntas = () => {
   const { colorMode } = useColorMode();
