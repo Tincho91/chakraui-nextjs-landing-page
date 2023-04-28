@@ -12,7 +12,12 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 
-const stepsData = [
+interface StepData {
+  title: string;
+  description: string;
+}
+
+const stepsData: StepData[] = [
   {
     title: "DESCARGA LA APP",
     description: "Descargá la app para tu dispositivo Android o iOS.",
@@ -31,6 +36,22 @@ const stepsData = [
     description: "Hace tuyo de ese mt2 de la cancha! ",
   },
 ];
+
+interface StepBoxProps {
+  step: StepData;
+  index: number;
+}
+
+const StepBox: React.FC<StepBoxProps> = ({ step, index }) => {
+  const stepNumberBgColor = useColorModeValue("red.500", "red.400");
+  const bgColor = useColorModeValue("white", "gray.400");
+
+  return (
+    <Box key={index} bg={bgColor} p={5} position="relative">
+      {/* ... same as before */}
+    </Box>
+  );
+};
 
 export default function Pasos() {
   const { isOpen, onToggle } = useDisclosure();
