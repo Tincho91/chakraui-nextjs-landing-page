@@ -20,13 +20,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return () => clearTimeout(timeout);
   }, []);
 
+  const handleSkipClick = () => {
+    setLoading(false);
+  };
+
   return (
     <ChakraProvider theme={theme}>
       <Head>
         <link rel="stylesheet" href="/fonts.css" />
       </Head>
       <Box minHeight="100vh" width="100%" overflowX={"hidden"}>
-        {loading && <LoadingScreen />} {/* Render de pantalla de carga */}
+        {loading && <LoadingScreen onSkip={handleSkipClick}/>} {/* Render de pantalla de carga */}
         <Navbar />
         {children}
         <DownloadApp />

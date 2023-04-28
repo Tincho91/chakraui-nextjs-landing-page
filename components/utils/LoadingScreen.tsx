@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Button } from "@chakra-ui/react";
 
 const loadingDuration = 8000;
 
@@ -24,7 +24,7 @@ const getRandomOpacity = () => {
 };
 
 const getRandomImageCount = () => {
-  return Math.floor(Math.random() * 15) + 2;
+  return Math.floor(Math.random() * 20) + 10;
 };
 
 const calculateYear = (percentage: number) => {
@@ -40,7 +40,7 @@ const getRandomPosition = () => {
   };
 };
 
-const LoadingScreen = () => {
+const LoadingScreen = ({ onSkip }: { onSkip: () => void }) => {
   const [currentYear, setCurrentYear] = useState(1903);
   const [imageElements, setImageElements] = useState<any[]>([]);
 
