@@ -2,14 +2,12 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Box, Text } from "@chakra-ui/react";
 
-const animationDuration = 500;
+const loadingDuration = 8000;
 
 const images = [
   // Agregar acá las imágenes
-  "17.png",
-  "21.png",
-  "2024.png",
-  "2028.png"
+  "brand-small.png",
+  "redstar.png",
 ];
 
 const getRandomImage = () => {
@@ -25,15 +23,8 @@ const getRandomOpacity = () => {
   return Math.random();
 };
 
-const getRandomPosition = () => {
-  return {
-    top: Math.floor(Math.random() * 100) + "%",
-    left: Math.floor(Math.random() * 100) + "%",
-  };
-};
-
 const getRandomImageCount = () => {
-  return Math.floor(Math.random() * 4) + 1;
+  return Math.floor(Math.random() * 15) + 2;
 };
 
 const calculateYear = (percentage: number) => {
@@ -42,31 +33,48 @@ const calculateYear = (percentage: number) => {
   return Math.floor(minYear + (maxYear - minYear) * percentage);
 };
 
+const getRandomPosition = () => {
+  return {
+    top: Math.random() * 100 + "vh",
+    left: Math.random() * 100 + "vw",
+  };
+};
+
 const LoadingScreen = () => {
   const [currentYear, setCurrentYear] = useState(1903);
-  const [visible, setVisible] = useState(true);
   const [imageElements, setImageElements] = useState<any[]>([]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setVisible(false);
-      setTimeout(() => {
-        const percentage = (Date.now() % animationDuration) / animationDuration;
-        setCurrentYear(calculateYear(percentage));
-        const newImageElements = Array.from(
-          { length: getRandomImageCount() },
-          () => ({
-            image: getRandomImage(),
-            animation: getRandomAnimation(),
-            position: getRandomPosition(),
-            opacity: getRandomOpacity(),
-          })
-        );
-        setImageElements(newImageElements);
-        setVisible(true);
-      }, 1000);
-    }, 3000);
-    return () => clearInterval(interval);
+    const startTime = Date.now();
+
+    const updateYear = () => {
+      const elapsed = Date.now() - startTime;
+      const percentage = elapsed / loadingDuration; // Calcular el porcentaje en función del tiempo transcurrido y la duración de la pantalla de carga
+      setCurrentYear(calculateYear(percentage));
+      if (percentage < 1) {
+        requestAnimationFrame(updateYear);
+      }
+    };
+
+    const initialDelay = 700; // Retraso inicial de 0.7 segundos
+    setTimeout(() => {
+      updateYear();
+    }, initialDelay);
+
+    const updateImages = () => {
+      const newImageElements = Array.from(
+        { length: getRandomImageCount() },
+        () => ({
+          image: getRandomImage(),
+          position: getRandomPosition(),
+          opacity: getRandomOpacity(),
+        })
+      );
+      setImageElements(newImageElements);
+      setTimeout(updateImages, 3000);
+    };
+
+    updateImages();
   }, []);
 
   return (
@@ -82,36 +90,28 @@ const LoadingScreen = () => {
       zIndex="100"
       backgroundColor="rgba(255, 255, 255, 0.95)"
     >
+      <Text
+        fontSize="6xl"
+        fontWeight="bold"
+        color={"black"}
+        position="absolute"
+        zIndex="101"
+      >
+        {currentYear}
+      </Text>
       <AnimatePresence>
-        {visible && (
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            transition={{ duration: 1 }}
-          >
-            <Text fontSize="6xl" fontWeight="bold" color={"black"}>
-              {currentYear}
-            </Text>
-            {imageElements.map((imageElement, index) => (
-              <motion.img
-                key={index}
-                src={imageElement.image}
-                alt="Random image"
-                initial={{ ...imageElement.position, opacity: 0, scale: 0, rotate: 0, x: 0, y: 0 }}
-                animate={{
-                  ...imageElement.position,
-                  opacity: imageElement.opacity,
-                  scale: imageElement.animation === "scale" ? 1.5 : 1,
-                  rotate: imageElement.animation === "rotate" ? 360 : 0,
-                  x: imageElement.animation === "translate" ? 100 : 0,
-                  y: imageElement.animation === "translate" ? 100 : 0,
-                }}
-                transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
-              />
-            ))}
-          </motion.div>
-        )}
+        {imageElements.map((imageElement, index) => (
+          <motion.img
+            key={index}
+            src={imageElement.image}
+            alt="Random image"
+            style={{ position: "absolute", ...imageElement.position }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: imageElement.opacity }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, repeat: 1, repeatType: "reverse" }}
+          />
+        ))}
       </AnimatePresence>
     </Box>
   );
