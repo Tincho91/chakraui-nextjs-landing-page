@@ -6,10 +6,10 @@ const animationDuration = 500;
 
 const images = [
   // Agregar acá las imágenes
-  "image1.jpg",
-  "image2.jpg",
-  "image3.jpg",
-  "image4.jpg"
+  "17.png",
+  "21.png",
+  "2024.png",
+  "2028.png"
 ];
 
 const getRandomImage = () => {
