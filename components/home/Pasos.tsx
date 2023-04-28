@@ -37,11 +37,10 @@ export default function Pasos() {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
   const isMobile = useBreakpointValue({ base: true, md: false });
-  const boxBgColor = useColorModeValue("white", "gray.700");
   const stepNumberBgColor = useColorModeValue("red.500", "red.400");
 
   return (
-    <Box bg={useColorModeValue("lightgray", "gray.800")}>
+    <Box bg={useColorModeValue("gray.100", "black")}>
       <Container width={"100%"} maxW={"1200px"}>
         <Stack
           as={Box}
@@ -81,8 +80,7 @@ export default function Pasos() {
             {stepsData.map((step, index) => (
               <Box
                 key={index}
-                bg={boxBgColor} // use the variable here
-                boxShadow="md"
+                bg={useColorModeValue("white", "gray.400")}
                 p={5}
                 position="relative"
               >
@@ -91,7 +89,7 @@ export default function Pasos() {
                   top="-10px"
                   left="50%"
                   transform="translateX(-50%)"
-                  bg={stepNumberBgColor} // use the variable here
+                  bg={stepNumberBgColor}
                   borderRadius="full"
                   w="24px"
                   h="24px"

@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 import { useRef } from "react";
-import SmartphoneCanvas from "../components/canvas/smartphone";
+import SmartphoneCanvas from "../canvas/smartphone"
 import Link from "next/link";
 
 const listItems = [
@@ -105,13 +105,12 @@ export default function DownloadApp() {
               </Text>
               <Flex
                 mt={4}
-                justifyContent={{ base: "space-between", md: "center" }}
+                justifyContent="center"
               >
                 <Link href={'/#'}>
                   <Image
                     src="/apple-app-store.png"
                     alt="Apple App Store Badge"
-                    height="50px"
                     _hover={{
                       filter: "brightness(120%)",
                     }}
@@ -121,10 +120,10 @@ export default function DownloadApp() {
                 <Image
                   src="/google-play-badge.png"
                   alt="Google Play Store Badge"
-                  height="50px"
                   _hover={{
                     filter: "brightness(120%)",
                   }}
+                  marginLeft={5}
                 />
                 </Link>
               </Flex>

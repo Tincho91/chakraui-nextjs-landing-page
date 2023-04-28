@@ -50,12 +50,12 @@ const SmartphoneCanvas = ({ containerRef, colorMode }) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setRotation((prevRotation) => {
-        if (prevRotation >= Math.PI / 6) {
+        if (prevRotation >= Math.PI / 120) {
           setDirection(-1);
-        } else if (prevRotation <= -Math.PI / 2) {
+        } else if (prevRotation <= -Math.PI / 3) {
           setDirection(1);
         }
-        return prevRotation + direction * 0.01;
+        return prevRotation + direction * 0.005;
       });
     }, 16);
 

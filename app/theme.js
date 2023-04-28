@@ -1,10 +1,30 @@
 import { extendTheme } from "@chakra-ui/react";
 
+const colors = {
+  gray: {
+    100: "#F7F7F7",
+    200: "#F1F1F1",
+    300: "#A1A1A1",
+    400: "#131313",
+    500: "#171717",
+    600: "#1F1F1F",
+  },
+  red: {
+    100: "#E20613"
+  },
+  green: {
+    100: "#1D9666",
+    200: "#659A85",
+    300: "#246F51",
+  },
+}
+
 const theme = extendTheme({
   config: {
     initialColorMode: "light",
     useSystemColorMode: false,
   },
+  colors,
   styles: {
     global: (props) => ({
       body: {

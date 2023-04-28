@@ -1,10 +1,10 @@
 'use client'
 import RootLayout from "@/app/layout";
-import HeroSection from "@/components/HeroSection";
-import ElProyecto from "@/components/ElProyecto";
-import Etapabilidad from "@/components/Etapabilidad";
-import Beneficios from "@/components/Beneficios";
-import Pasos from "@/components/Pasos";
+import HeroSection from "@/components/home/HeroSection";
+import ElProyecto from "@/components/home/ElProyecto";
+import Etapabilidad from "@/components/home/Etapabilidad";
+import Beneficios from "@/components/home/Beneficios";
+import Pasos from "@/components/home/Pasos";
 
 export default function Home() {
   return (

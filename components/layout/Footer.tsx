@@ -19,12 +19,12 @@ export default function Footer() {
   return (
     <>
       <Box
-        bg={'gray.900'}
+        bg={'gray.400'}
         color={'gray.100'}
       >
         <Container as={Stack} width={"100%"} maxW={"1200px"} py={10}>
           <SimpleGrid
-            templateColumns={{ sm: '1fr 1fr', md: '1fr 1fr 1fr 5fr' }}
+            templateColumns={{ sm: '1fr 1fr', md: '1fr 2fr 2fr 5fr' }}
             spacing={9}
           >
             <Stack spacing={6} align={{ base: 'center', md: 'flex-start' }}>
@@ -77,8 +77,8 @@ export default function Footer() {
       <Box
         borderTopWidth={1}
         borderStyle={'solid'}
-        borderColor={'gray.600'}
-        bg={'gray.900'}
+        borderColor={'gray.300'}
+        bg={'gray.400'}
         color={'gray.100'}
       >
         <Container
