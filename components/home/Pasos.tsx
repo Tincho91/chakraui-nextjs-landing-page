@@ -40,15 +40,37 @@ const stepsData: StepData[] = [
 interface StepBoxProps {
   step: StepData;
   index: number;
+  stepNumberBgColor: string;
+  bgColor: string;
 }
 
-const StepBox: React.FC<StepBoxProps> = ({ step, index }) => {
-  const stepNumberBgColor = useColorModeValue("red.500", "red.400");
-  const bgColor = useColorModeValue("white", "gray.400");
-
+const StepBox: React.FC<StepBoxProps> = ({ step, index, stepNumberBgColor, bgColor }) => {
   return (
     <Box key={index} bg={bgColor} p={5} position="relative">
-      {/* ... same as before */}
+      <Text
+        position="absolute"
+        top="-10px"
+        left="50%"
+        transform="translateX(-50%)"
+        bg={stepNumberBgColor}
+        borderRadius="full"
+        w="24px"
+        h="24px"
+        color="white"
+        fontSize="sm"
+        fontWeight="bold"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+      >
+        {index + 1}
+      </Text>
+      <Heading as="h3" size="md" mb="2" textAlign="center">
+        {step.title}
+      </Heading>
+      <Text fontSize="sm" textAlign="center">
+        {step.description}
+      </Text>
     </Box>
   );
 };
@@ -59,6 +81,7 @@ export default function Pasos() {
   const isDarkMode = colorMode === "dark";
   const isMobile = useBreakpointValue({ base: true, md: false });
   const stepNumberBgColor = useColorModeValue("red.500", "red.400");
+  const bgColor = useColorModeValue("white", "gray.400");
 
   return (
     <Box bg={useColorModeValue("gray.100", "black")}>
@@ -99,37 +122,13 @@ export default function Pasos() {
             gap={6}
           >
             {stepsData.map((step, index) => (
-              <Box
+              <StepBox
                 key={index}
-                bg={useColorModeValue("white", "gray.400")}
-                p={5}
-                position="relative"
-              >
-                <Text
-                  position="absolute"
-                  top="-10px"
-                  left="50%"
-                  transform="translateX(-50%)"
-                  bg={stepNumberBgColor}
-                  borderRadius="full"
-                  w="24px"
-                  h="24px"
-                  color="white"
-                  fontSize="sm"
-                  fontWeight="bold"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                >
-                  {index + 1}
-                </Text>
-                <Heading as="h3" size="md" mb="2" textAlign="center">
-                  {step.title}
-                </Heading>
-                <Text fontSize="sm" textAlign="center">
-                  {step.description}
-                </Text>
-              </Box>
+                step={step}
+                index={index}
+                stepNumberBgColor={stepNumberBgColor}
+                bgColor={bgColor}
+              />
             ))}
           </Grid>
           <Stack direction="row" spacing={10} justifyContent={"center"}>
