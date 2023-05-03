@@ -73,6 +73,7 @@ const Carousel = ({ images }) => {
               backgroundRepeat="no-repeat"
               backgroundSize="cover"
               backgroundImage={`url(${image.src})`}
+              px={{ base: 10, md: 0 }}
             ></Box>
           </SwiperSlide>
         ))}

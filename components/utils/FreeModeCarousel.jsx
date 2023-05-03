@@ -46,6 +46,7 @@ const FreeModeCarousel = ({ images }) => {
               w="100%"
               h="100%"
               objectFit="cover"
+              px={{ base: 10, md: 0 }}
             />
           </SwiperSlide>
         ))}
