@@ -80,8 +80,8 @@ const Beneficios = () => {
                 borderRadius="full"
                 minW="35px"
                 minH="35px"
-                width={{ base: '10vw', md:'7vw', xl: '80px',  }}
-                height={{ base: '10vw', md:'7vw', xl: '80px',  }}
+                width={{ base: '10vw', md:'7vw', lg: '5vw', xl: "50px" }}
+                height={{ base: '10vw', md:'7vw', lg: '5vw', xl: "50px" }}
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
@@ -89,7 +89,7 @@ const Beneficios = () => {
                 position={'absolute'}
               >
                 <CheckIcon
-                  fontSize={{ base: '6vw', md:'7vw', xl: '80px',  }}
+                  fontSize={{ base: '6vw', md:'3.5vw', xl: "30px"  }}
                   color="white"
                 />
               </Box>
@@ -97,19 +97,21 @@ const Beneficios = () => {
                 flexDirection="column"
                 justifyContent="flex-start"
                 alignItems="center"
-                paddingTop="30px"
+                paddingTop={{ base: '30px', md: '60px', lg:"50px" }}
                 width="100%"
               >
                 <Heading
                   textAlign="center"
-                  fontSize={{ base: '15px', md:'7vw', xl: '80px',  }}
+                  fontSize={{ base: '15px', sm:'5vw', md: '2.5vw', lg:"1.6vw" }}
+                  fontWeight={"800"}
                 >
                   {benefit.title}
                 </Heading>
                 <Text
-                  fontSize="sm"
+                  fontSize={{ base: "11px"}}
                   display={{ base: 'none', lg: 'block' }}
                   textAlign="center"
+                  mt={2}
                 >
                   {benefit.description}
                 </Text>
