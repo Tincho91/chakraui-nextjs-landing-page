@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 import { useRef } from "react";
-import SmartphoneCanvas from "../canvas/smartphone"
+import SmartphoneCanvas from "../canvas/smartphone";
 import Link from "next/link";
 
 const listItems = [
@@ -69,11 +69,11 @@ export default function DownloadApp() {
           <Flex direction={{ base: "column", md: "row" }}>
             <Box
               ref={containerRef}
-              minH={'300px'}
+              minH={"300px"}
               width={{ base: "100%", md: "50%" }}
               bgImage={bgGradient}
             >
-              <SmartphoneCanvas containerRef={containerRef}/>
+              <SmartphoneCanvas containerRef={containerRef} />
             </Box>
             <Box width={{ base: "100%", md: "50%" }}>
               <UnorderedList textAlign="left" mt={4} spacing={2}>
@@ -103,11 +103,8 @@ export default function DownloadApp() {
               <Text mt={4} fontWeight="bold">
                 ENCONTRALA EN
               </Text>
-              <Flex
-                mt={4}
-                justifyContent="center"
-              >
-                <Link href={'/#'}>
+              <Flex mt={4} justifyContent="center">
+                <Link href={"/#"}>
                   <Image
                     src="/apple-app-store.png"
                     alt="Apple App Store Badge"
@@ -116,15 +113,15 @@ export default function DownloadApp() {
                     }}
                   />
                 </Link>
-                <Link href={'/#'}>
-                <Image
-                  src="/google-play-badge.png"
-                  alt="Google Play Store Badge"
-                  _hover={{
-                    filter: "brightness(120%)",
-                  }}
-                  marginLeft={5}
-                />
+                <Link href={"/#"}>
+                  <Image
+                    src="/google-play-badge.png"
+                    alt="Google Play Store Badge"
+                    _hover={{
+                      filter: "brightness(120%)",
+                    }}
+                    marginLeft={5}
+                  />
                 </Link>
               </Flex>
             </Box>

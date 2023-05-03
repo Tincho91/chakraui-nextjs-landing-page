@@ -24,6 +24,10 @@ const theme = extendTheme({
     initialColorMode: "light",
     useSystemColorMode: false,
   },
+  fonts: {
+    heading: 'Acumin Pro, sans-serif',
+    body: 'Acumin Pro, sans-serif',
+  },
   colors,
   styles: {
     global: (props) => ({

@@ -11,14 +11,14 @@ import {
   AccordionPanel,
   AccordionIcon,
   useColorMode,
-  useBreakpointValue
+  useBreakpointValue,
 } from "@chakra-ui/react";
 
 const Preguntas = () => {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
   const textAlign = useBreakpointValue({ base: "center", md: "left" });
-  const mx = useBreakpointValue({base: "auto", md:"none"})
+  const mx = useBreakpointValue({ base: "auto", md: "none" });
 
   const questions = [
     { id: 1, question: "¿Qué es Pesos Cuadrados?", answer: "Rta 1" },
@@ -52,8 +52,13 @@ const Preguntas = () => {
         mx={"auto"}
       >
         <VStack alignItems="flex-start" spacing={4}>
-          <Heading color={isDark ? "white" : "black"} textAlign={textAlign} mx={mx}>
-            ¿Tenés alguna consulta? <br/>Tenemos respuestas para vos
+          <Heading
+            color={isDark ? "white" : "black"}
+            textAlign={textAlign}
+            mx={mx}
+          >
+            ¿Tenés alguna consulta? <br />
+            Tenemos respuestas para vos
           </Heading>
           <Text color={isDark ? "white" : "black"}>SOBRE EL PROYECTO</Text>
           <Text color={isDark ? "white" : "black"}>SOBRE PESOS CUADRADOS</Text>

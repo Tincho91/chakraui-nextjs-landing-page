@@ -10,9 +10,12 @@ import {
   useColorModeValue,
   useBreakpointValue
 } from "@chakra-ui/react"
-import Carousel from "../utils/ChakraCarousel"
+import Carousel from "../utils/SliderCarrousel";
 
 const images = [
+  { src: '/2024.png', alt: 'Estadio' },
+  { src: '/2028.png', alt: 'Estadio' },
+  { src: '/2030-2.png', alt: 'Estadio' },
   { src: '/2024.png', alt: 'Estadio' },
   { src: '/2028.png', alt: 'Estadio' },
   { src: '/2030-2.png', alt: 'Estadio' },

@@ -63,7 +63,7 @@ const Beneficios = () => {
           </Text>
         </Box>
         {benefits.map((benefit, index) => (
-          <AspectRatio key={index} ratio={358 / 276}>
+          <Box key={index}>
             <Flex
               gridColumn="span 1"
               flexDirection="column"
@@ -72,7 +72,6 @@ const Beneficios = () => {
               backgroundColor="green.700"
               border="1px"
               borderColor="green.600"
-              padding={'3'}
             >
               <Box
                 backgroundColor="green.400"
@@ -86,7 +85,7 @@ const Beneficios = () => {
               >
                 <CheckIcon 
                   color="white" 
-                  boxSize={9}
+                  boxSize={3}
                 />
               </Box>
               <Heading as="h2" size="md" mb="2" textAlign="center">
@@ -100,7 +99,7 @@ const Beneficios = () => {
                 {benefit.description}
               </Text>
             </Flex>
-          </AspectRatio>
+          </Box>
         ))}
       </Grid>
     </Container>

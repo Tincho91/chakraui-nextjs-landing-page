@@ -90,7 +90,7 @@ export default function Footer() {
           justifyContent={'center'}
           align={{ md: 'center' }}
           textAlign={'center'}
-          width={"100%"} 
+          width={"100%"}
           maxW={"1200px"}
         >
           <Text>Club Atlético Newell&apos;s Old Boys</Text>

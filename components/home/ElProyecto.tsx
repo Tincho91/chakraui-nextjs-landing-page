@@ -4,7 +4,6 @@ import {
   Container,
   Button,
   Stack,
-  Grid,
   Text,
   Image,
   useColorMode,
@@ -12,6 +11,17 @@ import {
   useColorModeValue,
   useBreakpointValue
 } from "@chakra-ui/react"
+import FreeModeCarousel from "../utils/FreeModeCarousel";
+
+
+const images = [
+  { src: "/17.png", alt: "Estadio" },
+  { src: "/2030.png", alt: "Estadio" },
+  { src: "/21.png", alt: "Estadio" },
+  { src: "/17.png", alt: "Estadio" },
+  { src: "/2030.png", alt: "Estadio" },
+  { src: "/21.png", alt: "Estadio" },
+];
 
 export default function ElProyecto() {
   const { isOpen, onToggle } = useDisclosure();
@@ -90,40 +100,11 @@ export default function ElProyecto() {
               VER NIVEL DE COLECTA
             </Button>
           </Stack>
-          <Stack spacing={2}>
-            <Grid
-              templateColumns={isMobile ? 'repeat(1, 1fr)' : 'repeat(3, 1fr)'}
-              justifyContent="center"
-              alignItems="center"
-              gap={isMobile ? 4 : 5}
-              marginTop={'50px'}
-            >
-              <Image
-                src="/17.png"
-                rounded="3xl"
-                width="100%"
-                objectFit="cover"
-                alt="Estadio"
-              />
-              <Image
-                src="/2030.png"
-                rounded="3xl"
-                width="100%"
-                height={isMobile ? '100%' : '120%'}
-                objectFit="cover"
-                alt="Estadio"
-              />
-              <Image
-                src="/21.png"
-                rounded="3xl"
-                width="100%"
-                objectFit="cover"
-                alt="Estadio"
-              />
-            </Grid>
-          </Stack>
         </Stack>
       </Container>
+      <Box width={"100%"} overflowX="visible">
+        <FreeModeCarousel images={images} />
+      </Box>
     </>
   )
 }

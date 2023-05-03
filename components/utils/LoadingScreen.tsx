@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Box, Text, Button } from "@chakra-ui/react";
@@ -40,7 +41,7 @@ const getRandomPosition = () => {
   };
 };
 
-const LoadingScreen = ({ onSkip }: { onSkip: () => void }) => {
+const LoadingScreen = ({ onSkip, onComplete }: { onSkip: () => void; onComplete: () => void }) => {
   const [currentYear, setCurrentYear] = useState(1903);
   const [imageElements, setImageElements] = useState<any[]>([]);
 
@@ -49,10 +50,14 @@ const LoadingScreen = ({ onSkip }: { onSkip: () => void }) => {
 
     const updateYear = () => {
       const elapsed = Date.now() - startTime;
-      const percentage = elapsed / loadingDuration; // Calcular el porcentaje en función del tiempo transcurrido y la duración de la pantalla de carga
+      const percentage = elapsed / loadingDuration;
       setCurrentYear(calculateYear(percentage));
       if (percentage < 1) {
         requestAnimationFrame(updateYear);
+      } else {
+        if (onComplete) {
+          onComplete();
+        }
       }
     };
 
@@ -99,6 +104,19 @@ const LoadingScreen = ({ onSkip }: { onSkip: () => void }) => {
       >
         {currentYear}
       </Text>
+      {onSkip && (
+        <Button
+          position="absolute"
+          bottom="2rem"
+          right="2rem"
+          zIndex="101"
+          onClick={onSkip}
+          colorScheme={"red"}
+          size={"lg"}
+        >
+          Skip
+        </Button>
+      )}
       <AnimatePresence>
         {imageElements.map((imageElement, index) => (
           <motion.img

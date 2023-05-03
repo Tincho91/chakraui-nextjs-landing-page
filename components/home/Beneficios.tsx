@@ -57,7 +57,7 @@ const Beneficios = () => {
         color={"white"}
       >
         <Box gridColumn="span 2" textAlign={{ base: 'center', md: 'left' }} pl='4'>
-          <Heading fontSize={{ base: '60px', xl: '100px' }}>BENEFICIOS</Heading>
+          <Heading fontSize={{ base: '40px', md:'7vw', xl: '80px',  }}>BENEFICIOS</Heading>
           <Text fontSize="2xl">
             Explora todos los beneficios de invertir en el club.
           </Text>
@@ -73,32 +73,47 @@ const Beneficios = () => {
               border="1px"
               borderColor="green.100"
               padding={'3'}
+              position={'relative'}
             >
               <Box
                 backgroundColor="green.200"
                 borderRadius="full"
-                w="70px"
-                h="70px"
+                minW="35px"
+                minH="35px"
+                width={{ base: '10vw', md:'7vw', xl: '80px',  }}
+                height={{ base: '10vw', md:'7vw', xl: '80px',  }}
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
-                mb="2"
+                top={'10px'}
+                position={'absolute'}
               >
-                <CheckIcon 
-                  color="white" 
-                  boxSize={9}
+                <CheckIcon
+                  fontSize={{ base: '6vw', md:'7vw', xl: '80px',  }}
+                  color="white"
                 />
               </Box>
-              <Heading as="h2" size="md" mb="2" textAlign="center">
-                {benefit.title}
-              </Heading>
-              <Text
-                fontSize="sm"
-                display={{ base: 'none', lg: 'block' }}
-                textAlign="center"
+              <Flex
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="center"
+                paddingTop="30px"
+                width="100%"
               >
-                {benefit.description}
-              </Text>
+                <Heading
+                  textAlign="center"
+                  fontSize={{ base: '15px', md:'7vw', xl: '80px',  }}
+                >
+                  {benefit.title}
+                </Heading>
+                <Text
+                  fontSize="sm"
+                  display={{ base: 'none', lg: 'block' }}
+                  textAlign="center"
+                >
+                  {benefit.description}
+                </Text>
+              </Flex>
             </Flex>
           </AspectRatio>
         ))}
