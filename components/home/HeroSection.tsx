@@ -9,6 +9,7 @@ import {
   useDisclosure,
   useColorModeValue
 } from "@chakra-ui/react"
+import Tilt from 'react-parallax-tilt';
 
 
 const HeroSection = () => {
@@ -27,27 +28,24 @@ const HeroSection = () => {
         >
           <Heading
             fontFamily={"Acumin Bd Pro, sans-serif"}
-            fontSize={{ base: "34px", md: "80px", lg: "80px", xl: "120px" }}
+            fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
             fontWeight={700}
-            lineHeight={{ base: "36px", md: "70px", lg: "70px", xl: "110px" }}
+            lineHeight={"0.9em"}
             letterSpacing={"-0.01em"}
             textAlign={"center"}
-            sx={{
-              fontVariationSettings: "'wght' 700, 'wdth' 50, 'slnt' 0",
-            }}
           >
             COMPRA MT2 DE LA CANCHA Y AYUDA AL CLUB
           </Heading>
-          <Stack 
-            direction="row" 
-            spacing={10} 
+          <Stack
+            direction="row"
+            spacing={10}
             justifyContent={"center"}
           >
             <Button
               backgroundColor={useColorModeValue("white", "transparent")}
               color={useColorModeValue("black", "white")}
               borderColor={useColorModeValue("black", "white")}
-              fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
+              fontSize={{ base: "11px", md: "lg", lg: "xl", xl: "2xl" }}
               paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
               paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
               borderWidth={1}
@@ -64,7 +62,7 @@ const HeroSection = () => {
               backgroundColor={useColorModeValue("white", "transparent")}
               color={useColorModeValue("black", "white")}
               borderColor={useColorModeValue("black", "white")}
-              fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
+              fontSize={{ base: "11px", md: "lg", lg: "xl", xl: "2xl" }}
               paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
               paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
               borderWidth={1}
@@ -79,12 +77,20 @@ const HeroSection = () => {
             </Button>
           </Stack>
         </Stack>
-        <Image
-          src="/hero-stadium.png"
-          rounded='lg'
-          width={"100%"}
-          alt='Estadio'
-        />
+        <Tilt
+          tiltMaxAngleX={3}
+          tiltMaxAngleY={3}
+          scale={1}
+          transitionSpeed={450}
+          className="rounded-lg overflow-hidden"
+        >
+          <Image
+            src="/hero-stadium.png"
+            rounded="lg"
+            width={"100%"}
+            alt="Estadio"
+          />
+        </Tilt>
       </Container>
     </>
   )

@@ -44,14 +44,11 @@ export default function DownloadApp() {
         >
           <Heading
             fontFamily={"Acumin Bd Pro, sans-serif"}
-            fontSize={{ base: "34px", md: "80px", lg: "80px", xl: "120px" }}
+            fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
             fontWeight={700}
-            lineHeight={{ base: "36px", md: "70px", lg: "70px", xl: "110px" }}
+            lineHeight={"0.9em"}
             letterSpacing={"-0.01em"}
             textAlign={"center"}
-            sx={{
-              fontVariationSettings: "'wght' 700, 'wdth' 50, 'slnt' 0",
-            }}
           >
             DESCARGA LA APP
           </Heading>
@@ -88,7 +85,7 @@ export default function DownloadApp() {
                       base: "15px",
                       sm: "4.6vw",
                       md: "2vw",
-                      xl: "35px",
+                      xl: "27px",
                     }}
                   >
                     <CheckIcon
