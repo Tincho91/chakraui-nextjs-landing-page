@@ -69,7 +69,6 @@ export default function DownloadApp() {
           <Flex direction={{ base: "column", md: "row" }}>
             <Box
               ref={containerRef}
-              minH={"300px"}
               width={{ base: "100%", md: "50%" }}
               bgImage={bgGradient}
             >

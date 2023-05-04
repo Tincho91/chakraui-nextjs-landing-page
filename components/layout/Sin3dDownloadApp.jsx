@@ -65,9 +65,17 @@ export default function DownloadApp() {
             el objetivo de poder llegar a la concreción total de las obras, se
             definieron una serie de etapas que se detallan a continuación.
           </Text>
-          <Flex direction={{ base: "column", md: "row" }} gap={20}>
-            <Box minH={"300px"} width={{ base: "100%", md: "50%" }}>
-              <Image src="/downloadapp.png" alt="Download App" />
+          <Flex direction={{ base: "column", md: "row" }} gap={{ base: 'none', md: 20 }}>
+            <Box
+              display="flex" justifyContent="center" alignItems="center"
+              width={{ base: "100%", md: "50%" }}
+              transform={{ base: "translateX(-25%)", sm: "translateX(-15%)", md: "none"  }}
+            >
+              <Image 
+                src="/downloadapp.png" 
+                alt="Download App" 
+                maxH={{base: "400px", md: "500px"}}
+              />
             </Box>
             <Box width={{ base: "100%", md: "50%" }}>
               <UnorderedList textAlign="left" mt={4} spacing={2}>
@@ -77,9 +85,9 @@ export default function DownloadApp() {
                     display="flex"
                     alignItems="center"
                     fontSize={{
-                      base: "25px",
-                      md: "25px",
-                      lg: "30px",
+                      base: "15px",
+                      sm: "4.6vw",
+                      md: "2vw",
                       xl: "35px",
                     }}
                   >
@@ -97,7 +105,12 @@ export default function DownloadApp() {
               <Text mt={4} fontWeight="bold">
                 ENCONTRALA EN
               </Text>
-              <Flex mt={4} justifyContent="center">
+              <Flex 
+                mt={4} 
+                flexDirection={{base:"row", lg:"row"}}
+                alignItems={"center"}
+                justifyContent={"center"}
+              >
                 <Link href={"/#"}>
                   <Image
                     src="/apple-app-store.png"
@@ -105,6 +118,7 @@ export default function DownloadApp() {
                     _hover={{
                       filter: "brightness(120%)",
                     }}
+                    mr={2}
                   />
                 </Link>
                 <Link href={"/#"}>
@@ -114,7 +128,7 @@ export default function DownloadApp() {
                     _hover={{
                       filter: "brightness(120%)",
                     }}
-                    marginLeft={5}
+                    ml={2}
                   />
                 </Link>
               </Flex>
