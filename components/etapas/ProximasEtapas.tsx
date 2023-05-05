@@ -15,29 +15,30 @@ import { CheckIcon } from "@chakra-ui/icons";
 const fasesData = [
   {
     title: "FASE 2",
+    image: "/17.png",
     listItems: [
-      "SECTOR NORTE.",
-      "TRIBUNA ALTA NORTE.",
-      "ACCESO INDEPENDIENTE A TRIBUNAS NORTE ALTA Y NORTE BAJA.",
-      "POLIDEPORTIVO.",
+      "POLIDEPORTIVO NORTE",
+      "VESTUARIOS DEPORTIVOS SECTOR ESTE.",
     ],
   },
   {
     title: "FASE 3",
+    image: "/2031.png",
     listItems: [
-      "EXAMPLE ITEM 1.",
-      "EXAMPLE ITEM 2.",
-      "EXAMPLE ITEM 3.",
-      "EXAMPLE ITEM 4.",
+      "NUEVO INGRESO OESTE",
+      "EDIFICIO OESTE. PB: HALL DE INGRESO, TIENDA NEWELL’S Y BAR TEMÁTICO. 1PISO: MUSEO DEPORTIVO Y SALÓN DE EVENTOS. 2 PISO: RESTAURANT.",
+      "PALCOS OESTE.",
+      "CUBIERTA DEL SECTOR OESTE.",
+      "ESTACIONAMIENTO SUBTERRÁNEO.",
     ],
   },
   {
     title: "FASE 4",
+    image: "/2030.png",
     listItems: [
-      "EXAMPLE ITEM 1.",
-      "EXAMPLE ITEM 2.",
-      "EXAMPLE ITEM 3.",
-      "EXAMPLE ITEM 4.",
+      "COMPLETAMIENTO DE LA COBERTURA LIVIANA EN LA TOTALIDAD DEL PERÍMETRO.",
+      "ILUMINACIÓN DEL ESTADIO.",
+      "PISOS, SOLADOS Y EQUIPAMIENTOS EXTERIORES.",
     ],
   },
 ];
@@ -47,21 +48,18 @@ export default function ProximasEtapas() {
     <Container width={"100%"} maxW={"1200px"}>
       <Stack
         as={Box}
-        textAlign={"center"}
+        textAlign="left"
         spacing={{ base: 8, md: 8 }}
         py={{ base: 10, md: 12 }}
         marginTop={"50px"}
       >
         <Heading
           fontFamily={"Acumin Bd Pro, sans-serif"}
-          fontSize={{ base: "34px", md: "80px", lg: "80px", xl: "120px" }}
+          fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
           fontWeight={700}
-          lineHeight={{ base: "36px", md: "70px", lg: "70px", xl: "110px" }}
+          lineHeight={"0.9em"}
           letterSpacing={"-0.01em"}
           textAlign={"center"}
-          sx={{
-            fontVariationSettings: "'wght' 700, 'wdth' 50, 'slnt' 0",
-          }}
         >
           PROXIMAS ETAPAS
         </Heading>
@@ -77,39 +75,47 @@ export default function ProximasEtapas() {
         </Text>
         {fasesData.map((fase, index) => (
           <Flex
+            as={Stack}
             key={fase.title}
-            direction={{ base: "column", md: index % 2 === 0 ? "row" : "row-reverse" }}
+            direction={{ base: "column", md: index % 2 === 0 ? "row-reverse" : "row" }}
+            spacing={"20"}
+            gap={{ base: 5, md: 10 }}
+            alignItems="center"
           >
-            {/* List section */}
-            <Box width={{ base: "100%", md: "50%" }}>
-              <Text fontWeight="bold" mb={2}>
+            {/* Listas */}
+            <Box 
+              width={{ base: "100%", md: "50%" }}
+              display={"flex"}
+              flexDirection={"column"}
+              justifyContent={"center"}
+              
+            >
+              <Text fontWeight="bold" mb={2} textAlign={"left"}>
                 PROXIMAMENTE
               </Text>
               <Heading
                 fontFamily={"Acumin Bd Pro, sans-serif"}
-                fontSize={{ base: "34px", md: "80px", lg: "80px", xl: "120px" }}
+                fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
                 fontWeight={700}
-                lineHeight={{ base: "36px", md: "70px", lg: "70px", xl: "110px" }}
+                lineHeight={"0.9em"}
                 letterSpacing={"-0.01em"}
                 textAlign={"left"}
-                sx={{
-                  fontVariationSettings: "'wght' 700, 'wdth' 50, 'slnt' 0",
-                }}
               >
                 {fase.title}
               </Heading>
-              <UnorderedList textAlign={"left"} mt={4} spacing={2}>
+              <UnorderedList textAlign="left" mt={4} spacing={2}>
                 {fase.listItems.map((item) => (
                   <ListItem
                     key={item}
                     display="flex"
                     alignItems="center"
                     fontSize={{
-                      base: "25px",
-                      md: "25px",
-                      lg: "30px",
-                      xl: "35px",
+                      base: "15px",
+                      sm: "4.6vw",
+                      md: "2vw",
+                      xl: "27px",
                     }}
+                    
                   >
                     <CheckIcon
                       boxSize={5}
@@ -123,7 +129,7 @@ export default function ProximasEtapas() {
                 ))}
               </UnorderedList>
             </Box>
-            {/* Image section */}
+            {/* Imagenes */}
             <Box
               display="flex"
               alignItems="center"
@@ -131,10 +137,9 @@ export default function ProximasEtapas() {
               width={{ base: "100%", md: "50%" }}
             >
               <Image
-                src="/2024.png"
-                alt="Estadio"
+                src={fase.image}
+                alt={`Estadio - ${fase.title}`}
                 rounded={"3xl"}
-                height={"100%"}
                 width={"100%"}
               />
             </Box>

@@ -32,14 +32,11 @@ export default function EtapaActual() {
       >
         <Heading
           fontFamily={"Acumin Bd Pro, sans-serif"}
-          fontSize={{ base: "34px", md: "80px", lg: "80px", xl: "120px" }}
+          fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
           fontWeight={700}
-          lineHeight={{ base: "36px", md: "70px", lg: "70px", xl: "110px" }}
+          lineHeight={"0.9em"}
           letterSpacing={"-0.01em"}
           textAlign={"center"}
-          sx={{
-            fontVariationSettings: "'wght' 700, 'wdth' 50, 'slnt' 0",
-          }}
         >
           ETAPA ACTUAL
         </Heading>
@@ -55,35 +52,32 @@ export default function EtapaActual() {
         </Text>
         <Flex direction={{ base: "column", md: "row" }}>
           <Box width={{ base: "100%", md: "50%" }}>
-            <Text fontWeight="bold" mb={2}>
+            <Text fontWeight="bold" mb={2} textAlign={"left"}>
               FONDEO ACTUAL
             </Text>
             <Heading
               fontFamily={"Acumin Bd Pro, sans-serif"}
-              fontSize={{ base: "34px", md: "80px", lg: "80px", xl: "120px" }}
+              fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
               fontWeight={700}
-              lineHeight={{ base: "36px", md: "70px", lg: "70px", xl: "110px" }}
+              lineHeight={"0.9em"}
               letterSpacing={"-0.01em"}
               textAlign={"left"}
-              sx={{
-                fontVariationSettings: "'wght' 700, 'wdth' 50, 'slnt' 0",
-              }}
             >
               FASE 1
             </Heading>
-            <UnorderedList textAlign={"left"} mt={4} spacing={2}>
-              {listItems.map((item) => (
-                <ListItem
-                  key={item}
-                  display="flex"
-                  alignItems="center"
-                  fontSize={{
-                    base: "25px",
-                    md: "25px",
-                    lg: "30px",
-                    xl: "35px",
-                  }}
-                >
+            <UnorderedList textAlign="left" mt={4} spacing={2}>
+                {listItems.map((item) => (
+                  <ListItem
+                    key={item}
+                    display="flex"
+                    alignItems="center"
+                    fontSize={{
+                      base: "15px",
+                      sm: "4.6vw",
+                      md: "2vw",
+                      xl: "27px",
+                    }}
+                  >
                   <CheckIcon
                     boxSize={5}
                     color="white"
