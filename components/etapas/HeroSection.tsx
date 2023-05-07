@@ -1,17 +1,15 @@
 import React from 'react';
 import { Container, Box, Image, Text, Link } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
 
 export default function Etapas() {
-  const router = useRouter();
 
   return (
     <Container width={'100%'} maxW={"1200px"} marginTop="20px">
       <Link
-        onClick={() => router.push('/')}
+        href='/'
         color={'red'}
         fontWeight={'600'}
-        fontSize={'30px'}
+        fontSize={'20px'}
       >
         VOLVER ATRÁS
       </Link>

@@ -1,11 +1,14 @@
 'use client'
 import RootLayout from "@/app/layout";
-// Import your Etapas-specific components here
+import EtapaActual from "@/components/colecta/EtapaActual";
+import NivelDeColecta from "@/components/colecta/NivelDeColecta"
+
 
 export default function Colecta() {
   return (
     <RootLayout>
-      Colecta
+      <NivelDeColecta />
+      <EtapaActual />
     </RootLayout>
   );
 }

@@ -1,11 +1,15 @@
 'use client'
 import RootLayout from "@/app/layout";
-// Import your Etapas-specific components here
+
+import AvancesDelProyecto from "@/components/avances/AvancesDelProyecto";
+import Noticias from "@/components/avances/Noticias"
+
 
 export default function Avances() {
   return (
     <RootLayout>
-      Avanves
+      <AvancesDelProyecto />
+      <Noticias />
     </RootLayout>
   );
 }
