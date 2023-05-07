@@ -73,29 +73,51 @@ export default function NivelDeColecta() {
       </Heading>
       <VStack spacing={10} mt={10}>
         <ProgressBar percentage={progressPercentage} />
-        <Grid templateColumns={{ base: "1fr", md: "3fr 2fr" }} gap={10} width={'100%'}>
+        <Grid
+          templateColumns={{ base: "1fr", md: "3fr 2fr" }}
+          gap={10}
+          width={"100%"}
+        >
           <Image
             src="/2024.png"
             alt="Placeholder"
             width="100%"
             rounded={"3xl"}
           />
-          <VStack alignItems={{ base: "center", md: "flex-start" }} spacing={6}>
+          <VStack 
+            alignItems={{ base: "center", md: "flex-start" }}
+            justifyContent={{ md: "space-between" }}
+            spacing={6}
+          >
             <Box textAlign={{ base: "center", md: "left" }} width="100%">
               <Flex direction={"column"} width="100%">
                 <Box>
-                  <Text fontSize="3xl" color={"red.100"} fontWeight={"700"}>
+                  <Text
+                    fontSize={{ base: "9vw", md: "4vw", xl: "5xl" }}
+                    color={"red.100"}
+                    fontWeight={"700"}
+                  >
                     ${collectedAmount.toLocaleString()}
                   </Text>
-                  <Text fontSize="md" fontWeight={"600"}>
-                    Objetivo: ${goalAmount.toLocaleString()}
+                  <Text
+                    fontSize={{ base: "5vw", md: "1.8vw", xl: "xl" }}
+                    fontWeight={"600"}
+                  >
+                    OBJETIVO ${goalAmount.toLocaleString()}
                   </Text>
                 </Box>
-                <Box>
-                  <Text fontSize="3xl" color={"red.100"} fontWeight={"700"}>
+                <Box mt={{ base: "10px" }}>
+                  <Text
+                    fontSize={{ base: "9vw", md: "4vw", xl: "5xl" }}
+                    color={"red.100"}
+                    fontWeight={"700"}
+                  >
                     {participants}
                   </Text>
-                  <Text fontSize="md" fontWeight={"600"}>
+                  <Text
+                    fontSize={{ base: "5vw", md: "1.8vw", xl: "xl" }}
+                    fontWeight={"600"}
+                  >
                     PARTICIPANTES
                   </Text>
                 </Box>
@@ -115,15 +137,16 @@ export default function NivelDeColecta() {
                   borderColor: "red",
                   color: "white",
                 }}
+                mt={{ base: "10px" }}
               >
                 PARTICIPAR
               </Button>
             </Box>
             <HStack spacing={4}>
-              <Link href="https://twitter.com/" isExternal>
+              <Link href="https://twitter.com/" isExternal color={"red.100"}>
                 <FaTwitter size="1.5em" />
               </Link>
-              <Link href="https://instagram.com/" isExternal>
+              <Link href="https://instagram.com/" isExternal color={"red.100"}>
                 <FaInstagram size="1.5em" />
               </Link>
             </HStack>

@@ -40,7 +40,7 @@ export default function EtapaActual() {
         >
           ETAPA ACTUAL
         </Heading>
-        <Flex direction={{ base: "column", md: "row" }}>
+        <Flex direction={{ base: "column", md: "row" }} gap={{ base: "5", md: "none" }}>
           <Box width={{ base: "100%", md: "50%" }}>
             <Text fontWeight="bold" mb={2} textAlign={"left"}>
               FONDEO ACTUAL
