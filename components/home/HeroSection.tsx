@@ -10,7 +10,8 @@ import {
   useColorModeValue
 } from "@chakra-ui/react"
 import Tilt from 'react-parallax-tilt';
-
+import { Element } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 
 const HeroSection = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -18,7 +19,7 @@ const HeroSection = () => {
   const isDarkMode = colorMode === "dark";
 
   return (
-    <>
+    <Element name="HeroSection">
       <Container width={"100%"} maxW={"1200px"}>
         <Stack
           as={Box}
@@ -41,40 +42,50 @@ const HeroSection = () => {
             spacing={10}
             justifyContent={"center"}
           >
-            <Button
-              backgroundColor={useColorModeValue("white", "transparent")}
-              color={useColorModeValue("black", "white")}
-              borderColor={useColorModeValue("black", "white")}
-              fontSize={{ base: "11px", md: "lg", lg: "xl", xl: "2xl" }}
-              paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
-              paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
-              borderWidth={1}
-              rounded={"md"}
-              _hover={{
-                bg: "red",
-                borderColor: "red",
-                color: "white",
-              }}
-            >
-              COMO SER PARTE
-            </Button>
-            <Button
-              backgroundColor={useColorModeValue("white", "transparent")}
-              color={useColorModeValue("black", "white")}
-              borderColor={useColorModeValue("black", "white")}
-              fontSize={{ base: "11px", md: "lg", lg: "xl", xl: "2xl" }}
-              paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
-              paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
-              borderWidth={1}
-              rounded={"md"}
-              _hover={{
-                bg: "red",
-                borderColor: "red",
-                color: "white",
-              }}
-            >
-              QUIERO SABER MAS
-            </Button>
+            <ScrollLink 
+              to={"Pasos"}
+              smooth={true}
+              duration={500}>
+              <Button
+                backgroundColor={useColorModeValue("white", "transparent")}
+                color={useColorModeValue("black", "white")}
+                borderColor={useColorModeValue("black", "white")}
+                fontSize={{ base: "11px", md: "lg", lg: "xl", xl: "2xl" }}
+                paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
+                paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
+                borderWidth={1}
+                rounded={"md"}
+                _hover={{
+                  bg: "red",
+                  borderColor: "red",
+                  color: "white",
+                }}
+              >
+                COMO SER PARTE
+              </Button>
+            </ScrollLink>
+            <ScrollLink 
+              to={"Preguntas"}
+              smooth={true}
+              duration={500}>
+              <Button
+                backgroundColor={useColorModeValue("white", "transparent")}
+                color={useColorModeValue("black", "white")}
+                borderColor={useColorModeValue("black", "white")}
+                fontSize={{ base: "11px", md: "lg", lg: "xl", xl: "2xl" }}
+                paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
+                paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
+                borderWidth={1}
+                rounded={"md"}
+                _hover={{
+                  bg: "red",
+                  borderColor: "red",
+                  color: "white",
+                }}
+              >
+                QUIERO SABER MÁS
+              </Button>
+            </ScrollLink>
           </Stack>
         </Stack>
         <Tilt
@@ -92,7 +103,7 @@ const HeroSection = () => {
           />
         </Tilt>
       </Container>
-    </>
+    </Element>
   )
 }
 

@@ -5,11 +5,9 @@ import {
   Stack,
   Image,
   Text,
-  useColorModeValue,
   Flex,
   ListItem,
   UnorderedList,
-  Button,
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 

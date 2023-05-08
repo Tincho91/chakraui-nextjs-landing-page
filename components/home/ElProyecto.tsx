@@ -5,13 +5,14 @@ import {
   Button,
   Stack,
   Text,
-  Image,
+  Link,
   useColorMode,
   useDisclosure,
   useColorModeValue,
   useBreakpointValue
 } from "@chakra-ui/react"
 import FreeModeCarousel from "../utils/FreeModeCarousel";
+import { Element } from "react-scroll";
 
 
 const images = [
@@ -30,7 +31,7 @@ export default function ElProyecto() {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
-    <>
+    <Element name="ElProyecto">
       <Container width={"100%"} maxW={"1200px"}>
         <Stack
           as={Box}
@@ -62,46 +63,50 @@ export default function ElProyecto() {
             spacing={10}
             justifyContent={"center"}
           >
-            <Button
-              backgroundColor={useColorModeValue("white", "transparent")}
-              color={useColorModeValue("black", "white")}
-              borderColor={useColorModeValue("black", "white")}
-              fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
-              paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
-              paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
-              borderWidth={1}
-              rounded={"md"}
-              _hover={{
-                bg: "red",
-                borderColor: "red",
-                color: "white",
-              }}
-            >
-              VER AVANCES
-            </Button>
-            <Button
-              backgroundColor={useColorModeValue("white", "transparent")}
-              color={useColorModeValue("black", "white")}
-              borderColor={useColorModeValue("black", "white")}
-              fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
-              paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
-              paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
-              borderWidth={1}
-              rounded={"md"}
-              _hover={{
-                bg: "red",
-                borderColor: "red",
-                color: "white",
-              }}
-            >
-              VER NIVEL DE COLECTA
-            </Button>
+            <Link href="/avances">
+              <Button
+                backgroundColor={useColorModeValue("white", "transparent")}
+                color={useColorModeValue("black", "white")}
+                borderColor={useColorModeValue("black", "white")}
+                fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
+                paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
+                paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
+                borderWidth={1}
+                rounded={"md"}
+                _hover={{
+                  bg: "red",
+                  borderColor: "red",
+                  color: "white",
+                }}
+              >
+                VER AVANCES
+              </Button>
+            </Link>
+            <Link href="/colecta">
+              <Button
+                backgroundColor={useColorModeValue("white", "transparent")}
+                color={useColorModeValue("black", "white")}
+                borderColor={useColorModeValue("black", "white")}
+                fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
+                paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
+                paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
+                borderWidth={1}
+                rounded={"md"}
+                _hover={{
+                  bg: "red",
+                  borderColor: "red",
+                  color: "white",
+                }}
+              >
+                VER NIVEL DE COLECTA
+              </Button>
+            </Link>
           </Stack>
         </Stack>
       </Container>
       <Box width={"100%"} overflowX="visible">
         <FreeModeCarousel images={images} />
       </Box>
-    </>
+    </Element>
   )
 }

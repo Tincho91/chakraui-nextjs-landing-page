@@ -24,6 +24,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/canvas/smartphone.jsx", "components/home/Pasos.tsx", "components/canvas/loader.jsx", "components/layout/DownloadApp.jsx", "components/layout/Sin3dDownloadApp.jsx", "components/layout/Preguntas.tsx", "components/utils/SliderCarrousel.jsx", "components/colecta/NivelDeColecta.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/canvas/smartphone.jsx", "components/home/Pasos.tsx", "components/canvas/loader.jsx", "components/layout/DownloadApp.jsx", "components/layout/Sin3dDownloadApp.jsx", "components/layout/Preguntas.tsx", "components/utils/SliderCarrousel.jsx", "components/colecta/NivelDeColecta.jsx", "components/layout/Navbar.tsx"],
   "exclude": ["node_modules"]
 }

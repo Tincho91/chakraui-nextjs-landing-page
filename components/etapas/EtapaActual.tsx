@@ -3,6 +3,7 @@ import {
   Heading,
   Container,
   Stack,
+  Link,
   Image,
   Text,
   useColorModeValue,
@@ -106,24 +107,26 @@ export default function EtapaActual() {
           </Box>
         </Flex>
       </Stack>
-      <Button
-        mt={4}
-        backgroundColor={useColorModeValue("white", "transparent")}
-        color={useColorModeValue("black", "white")}
-        borderColor={useColorModeValue("black", "white")}
-        fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
-        paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
-        paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
-        borderWidth={1}
-        rounded={"md"}
-        _hover={{
-          bg: "red",
-          borderColor: "red",
-          color: "white",
-        }}
-      >
-        VER NIVEL DE COLECTA
-      </Button>
+      <Link href="/colecta">
+        <Button
+          mt={4}
+          backgroundColor={useColorModeValue("white", "transparent")}
+          color={useColorModeValue("black", "white")}
+          borderColor={useColorModeValue("black", "white")}
+          fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
+          paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
+          paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
+          borderWidth={1}
+          rounded={"md"}
+          _hover={{
+            bg: "red",
+            borderColor: "red",
+            color: "white",
+          }}
+        >
+          VER NIVEL DE COLECTA
+        </Button>
+      </Link>
     </Container>
   );
 }

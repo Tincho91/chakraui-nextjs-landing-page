@@ -7,13 +7,14 @@ import {
   useColorMode,
   useColorModeValue,
   Flex,
+  Link,
   ListItem,
   UnorderedList,
   Image,
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 import { useRef } from "react";
-import Link from "next/link";
+import { Element } from "react-scroll";
 
 const listItems = [
   "Accede a NFT exclusivos",
@@ -33,7 +34,7 @@ export default function DownloadApp() {
   );
 
   return (
-    <>
+    <Element name="Sin3dDownloadApp">
       <Container width={"100%"} maxW={"1200px"}>
         <Stack
           as={Box}
@@ -133,6 +134,6 @@ export default function DownloadApp() {
           </Flex>
         </Stack>
       </Container>
-    </>
+    </Element>
   );
 }

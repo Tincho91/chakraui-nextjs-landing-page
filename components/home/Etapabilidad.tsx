@@ -5,12 +5,14 @@ import {
   Button,
   Stack,
   Text,
+  Link,
   useColorMode,
   useDisclosure,
   useColorModeValue,
   useBreakpointValue
 } from "@chakra-ui/react"
 import Carousel from "../utils/SliderCarrousel";
+import { Element } from "react-scroll";
 
 const images = [
   { src: '/2024.png', alt: 'Estadio' },
@@ -29,7 +31,7 @@ export default function Etapabilidad() {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
-    <>
+    <Element name="Etapabilidad">
       <Container width={"100%"} maxW={"1200px"}>
         <Stack
           as={Box}
@@ -61,29 +63,31 @@ export default function Etapabilidad() {
             spacing={10}
             justifyContent={"center"}
           >
-            <Button
-              backgroundColor={useColorModeValue("white", "transparent")}
-              color={useColorModeValue("black", "white")}
-              borderColor={useColorModeValue("black", "white")}
-              fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
-              paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
-              paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
-              borderWidth={1}
-              rounded={"md"}
-              _hover={{
-                bg: "red",
-                borderColor: "red",
-                color: "white",
-              }}
-            >
-              VER ETAPABILIDAD
-            </Button>
+            <Link href="/etapas">
+              <Button
+                backgroundColor={useColorModeValue("white", "transparent")}
+                color={useColorModeValue("black", "white")}
+                borderColor={useColorModeValue("black", "white")}
+                fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
+                paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
+                paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
+                borderWidth={1}
+                rounded={"md"}
+                _hover={{
+                  bg: "red",
+                  borderColor: "red",
+                  color: "white",
+                }}
+              >
+                VER ETAPABILIDAD
+              </Button>
+            </Link>
           </Stack>
           <Stack spacing={2}>
-            <Carousel images={images}/>
+            <Carousel images={images} />
           </Stack>
         </Stack>
       </Container>
-    </>
+    </Element>
   )
 }

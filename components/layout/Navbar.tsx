@@ -7,7 +7,6 @@ import {
   Stack,
   Collapse,
   Image,
-  Link,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
@@ -20,6 +19,7 @@ import {
   MoonIcon,
 } from "@chakra-ui/icons";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
+import { Link as ScrollLink } from "react-scroll";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -141,24 +141,30 @@ export default function Navbar() {
 
 const DesktopNav = () => {
   const linkColor = useColorModeValue("blackAlpha.800", "white");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
-  const linkActiveColor = useColorModeValue("red.600", "red.600");
+  const linkHoverColor = useColorModeValue("red.100", "red.100");
+  const linkActiveColor = useColorModeValue("red.100", "red.100");
   const linkActiveUnderline = "2px";
 
   return (
     <Flex direction={"row"} width={'100%'} maxW={'1200px'}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
-          <Link
+
+        <ScrollLink
+          to={navItem.to}
+          smooth={true}
+          duration={500}
+        >
+          <Box
+            key={navItem.label}
             p={2}
-            href={navItem.href ?? "#"}
             fontSize={"sm"}
             fontWeight={600}
-            whiteSpace='nowrap'
+            whiteSpace="nowrap"
             color={linkColor}
             fontFamily={"'Acumin Variable Concept', sans-serif"}
             borderBottom={navItem.active ? linkActiveUnderline : ""}
             borderColor={navItem.active ? linkActiveColor : ""}
+            cursor="pointer"
             _hover={{
               textDecoration: "none",
               color: linkHoverColor,
@@ -167,8 +173,9 @@ const DesktopNav = () => {
             }}
           >
             {navItem.label}
-          </Link>
-        </Box>
+          </Box>
+        </ScrollLink>
+
       ))}
     </Flex>
   );
@@ -188,13 +195,15 @@ const MobileNav = () => {
   );
 };
 
-const MobileNavItem = ({ label, href }: NavItem) => {
+const MobileNavItem = ({ label, to }: NavItem) => {
   return (
     <Stack spacing={4}>
       <Flex
         py={2}
-        as={Link}
-        href={href ?? "#"}
+        as={ScrollLink}
+        to={to}
+        smooth={true}
+        duration={500}
         justify={"space-between"}
         align={"center"}
         _hover={{
@@ -215,24 +224,24 @@ const MobileNavItem = ({ label, href }: NavItem) => {
 interface NavItem {
   label: string;
   active?: boolean;
-  href?: string;
+  to: string;
 }
 
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "EL PROYECTO",
-    href: "#",
+    to: "ElProyecto",
   },
   {
     label: "BENEFICIOS",
-    href: "#",
+    to: "Beneficios",
   },
   {
     label: "DESCARGA LA APP",
-    href: "#",
+    to: "Sin3dDownloadApp",
   },
   {
     label: "PREGUNTAS FRECUENTES",
-    href: "#",
+    to: "Preguntas",
   },
 ];

@@ -11,6 +11,8 @@ import {
   useColorModeValue,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import { Element } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 
 interface StepData {
   title: string;
@@ -84,71 +86,79 @@ export default function Pasos() {
   const bgColor = useColorModeValue("white", "gray.400");
 
   return (
-    <Box bg={useColorModeValue("gray.100", "black")}>
-      <Container width={"100%"} maxW={"1200px"}>
-        <Stack
-          as={Box}
-          textAlign={"center"}
-          spacing={{ base: 8, md: 8 }}
-          py={{ base: 10, md: 12 }}
-          marginTop={"50px"}
-        >
-          <Text
-            fontFamily={"Acumin Bd Pro, sans-serif"}
-            fontSize={{ base: "18px", md: "40px", lg: "40px", xl: "60px" }}
-            fontWeight={700}
-          >
-            🤔 PASO A PASO
-          </Text>
-          <Heading
-            fontFamily={"Acumin Bd Pro, sans-serif"}
-            fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
-            fontWeight={700}
-            lineHeight={"0.9em"}
-            letterSpacing={"-0.01em"}
+    <Element name="Pasos">
+      <Box bg={useColorModeValue("gray.100", "black")}>
+        <Container width={"100%"} maxW={"1200px"}>
+          <Stack
+            as={Box}
             textAlign={"center"}
+            spacing={{ base: 8, md: 8 }}
+            py={{ base: 10, md: 12 }}
+            marginTop={"50px"}
           >
-            EL PROYECTO
-          </Heading>
-          <Grid
-            templateColumns={{
-              base: "repeat(1, 1fr)",
-              sm: "repeat(2, 1fr)",
-              md: "repeat(4, 1fr)",
-            }}
-            gap={6}
-          >
-            {stepsData.map((step, index) => (
-              <StepBox
-                key={index}
-                step={step}
-                index={index}
-                stepNumberBgColor={stepNumberBgColor}
-                bgColor={bgColor}
-              />
-            ))}
-          </Grid>
-          <Stack direction="row" spacing={10} justifyContent={"center"}>
-            <Button
-              backgroundColor={useColorModeValue("white", "transparent")}
-              color={useColorModeValue("black", "white")}
-              borderColor={useColorModeValue("black", "white")}
-              fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
-              paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
-              paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
-              borderWidth={1}
-              rounded={"md"}
-              _hover={{
-                bg: "red",
-                borderColor: "red",
-                color: "white",
-              }}
+            <Text
+              fontFamily={"Acumin Bd Pro, sans-serif"}
+              fontSize={{ base: "18px", md: "40px", lg: "40px", xl: "60px" }}
+              fontWeight={700}
             >
-              COMPRAR NFT DEL CLUB
-            </Button>
+              🤔 PASO A PASO
+            </Text>
+            <Heading
+              fontFamily={"Acumin Bd Pro, sans-serif"}
+              fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
+              fontWeight={700}
+              lineHeight={"0.9em"}
+              letterSpacing={"-0.01em"}
+              textAlign={"center"}
+            >
+              EL PROYECTO
+            </Heading>
+            <Grid
+              templateColumns={{
+                base: "repeat(1, 1fr)",
+                sm: "repeat(2, 1fr)",
+                md: "repeat(4, 1fr)",
+              }}
+              gap={6}
+            >
+              {stepsData.map((step, index) => (
+                <StepBox
+                  key={index}
+                  step={step}
+                  index={index}
+                  stepNumberBgColor={stepNumberBgColor}
+                  bgColor={bgColor}
+                />
+              ))}
+            </Grid>
+            <Stack direction="row" spacing={10} justifyContent={"center"}>
+              <ScrollLink
+                to={"Sin3dDownloadApp"}
+                smooth={true}
+                duration={500}
+              >
+                <Button
+                  backgroundColor={useColorModeValue("white", "transparent")}
+                  color={useColorModeValue("black", "white")}
+                  borderColor={useColorModeValue("black", "white")}
+                  fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
+                  paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
+                  paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
+                  borderWidth={1}
+                  rounded={"md"}
+                  _hover={{
+                    bg: "red",
+                    borderColor: "red",
+                    color: "white",
+                  }}
+                >
+                  COMPRAR NFT DEL CLUB
+                </Button>
+              </ScrollLink>
+            </Stack>
           </Stack>
-        </Stack>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </Element>
   );
 }
