@@ -74,6 +74,7 @@ export default function Etapabilidad() {
                 borderWidth={1}
                 rounded={"md"}
                 _hover={{
+                  textDecoration: "none",
                   bg: "red",
                   borderColor: "red",
                   color: "white",
