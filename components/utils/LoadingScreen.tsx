@@ -80,7 +80,7 @@ const LoadingScreen = ({ onSkip, onComplete }: { onSkip: () => void; onComplete:
     };
 
     updateImages();
-  }, []);
+  }, [onComplete]);
 
   return (
     <Box

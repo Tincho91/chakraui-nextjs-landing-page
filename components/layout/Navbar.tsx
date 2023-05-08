@@ -150,12 +150,12 @@ const DesktopNav = () => {
       {NAV_ITEMS.map((navItem) => (
 
         <ScrollLink
+          key={navItem.label}
           to={navItem.to}
           smooth={true}
           duration={500}
         >
           <Box
-            key={navItem.label}
             p={2}
             fontSize={"sm"}
             fontWeight={600}
