@@ -63,7 +63,7 @@ export default function ElProyecto() {
             spacing={10}
             justifyContent={"center"}
           >
-            <Link href="/avances">
+            <Link href="/avances" _hover={{ textDecoration: "none" }}>
               <Button
                 backgroundColor={useColorModeValue("white", "transparent")}
                 color={useColorModeValue("red.100", "white")}
@@ -83,7 +83,7 @@ export default function ElProyecto() {
                 VER AVANCES
               </Button>
             </Link>
-            <Link href="/colecta">
+            <Link href="/colecta" _hover={{ textDecoration: "none" }}>
               <Button
                 backgroundColor={useColorModeValue("white", "transparent")}
                 color={useColorModeValue("red.100", "white")}
