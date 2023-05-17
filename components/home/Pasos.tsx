@@ -48,18 +48,18 @@ interface StepBoxProps {
 
 const StepBox: React.FC<StepBoxProps> = ({ step, index, stepNumberBgColor, bgColor }) => {
   return (
-    <Box key={index} bg={bgColor} p={5} position="relative">
+    <Box key={index} bg={bgColor} p={5} position="relative" mb={{base: "20px", sm:"none"}}>
       <Text
         position="absolute"
-        top="-10px"
+        top="-35px"
         left="50%"
         transform="translateX(-50%)"
         bg={stepNumberBgColor}
         borderRadius="full"
-        w="24px"
-        h="24px"
+        w="45px"
+        h="45px"
         color="white"
-        fontSize="sm"
+        fontSize="30px"
         fontWeight="bold"
         display="flex"
         alignItems="center"
@@ -98,7 +98,7 @@ export default function Pasos() {
           >
             <Text
               fontFamily={"Acumin Bd Pro, sans-serif"}
-              fontSize={{ base: "18px", md: "40px", lg: "40px", xl: "60px" }}
+              fontSize={{ base: "18px", md: "23px", lg: "25px", xl: "30px" }}
               fontWeight={700}
             >
               🤔 PASO A PASO
@@ -110,6 +110,7 @@ export default function Pasos() {
               lineHeight={"0.9em"}
               letterSpacing={"-0.01em"}
               textAlign={"center"}
+              pb={"5vh"}
             >
               EL PROYECTO
             </Heading>
@@ -128,6 +129,7 @@ export default function Pasos() {
                   index={index}
                   stepNumberBgColor={stepNumberBgColor}
                   bgColor={bgColor}
+                  
                 />
               ))}
             </Grid>
@@ -138,18 +140,18 @@ export default function Pasos() {
                 duration={500}
               >
                 <Button
-                  backgroundColor={useColorModeValue("white", "transparent")}
-                  color={useColorModeValue("black", "white")}
-                  borderColor={useColorModeValue("black", "white")}
-                  fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
+                  backgroundColor="red.100"
+                  color="white"
+                  borderColor="red.100"
+                  fontSize={{ base: "11px", md: "lg", lg: "xl", xl: "2xl" }}
                   paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
                   paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
                   borderWidth={1}
                   rounded={"md"}
+                  transition="all 0.2s ease"
                   _hover={{
-                    bg: "red",
-                    borderColor: "red",
-                    color: "white",
+                    backgroundColor: "red.200",
+                    borderColor: "red.200",
                   }}
                 >
                   COMPRAR NFT DEL CLUB

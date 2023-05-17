@@ -54,7 +54,7 @@ export default function Etapabilidad() {
             flexDir={'row'}
             color={useColorModeValue("black", "white")}
             maxW={'100%'}
-            fontSize={{ base: "22px", md: "24px", lg: "28px", xl: "30px" }}
+            fontSize={{ base: "20px", md: "22px", lg: "22px", xl: "24px" }}
           >
             Contemplando las posibilidades económico financieras del club, y con el objetivo de poder llegar a la concreción total de las obras, se definieron una serie de etapas que se detallan a continuación.
           </Text>
@@ -65,19 +65,18 @@ export default function Etapabilidad() {
           >
             <Link href="/etapas">
               <Button
-                backgroundColor={useColorModeValue("white", "transparent")}
-                color={useColorModeValue("black", "white")}
-                borderColor={useColorModeValue("black", "white")}
-                fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
+                backgroundColor="red.100"
+                color="white"
+                borderColor="red.100"
+                fontSize={{ base: "11px", md: "lg", lg: "xl", xl: "2xl" }}
                 paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
                 paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
                 borderWidth={1}
                 rounded={"md"}
+                transition="all 0.2s ease"
                 _hover={{
-                  textDecoration: "none",
-                  bg: "red",
-                  borderColor: "red",
-                  color: "white",
+                  backgroundColor: "red.200",
+                  borderColor: "red.200",
                 }}
               >
                 VER ETAPABILIDAD

@@ -92,7 +92,7 @@ export default function Navbar() {
         >
           <IconButton
             aria-label="Toggle Dark Mode"
-            icon={isDarkMode ? <SunIcon /> : <MoonIcon />}
+            icon={<MoonIcon />}
             fontSize='23px'
             onClick={toggleColorMode}
             border="none"

@@ -63,24 +63,15 @@ export default function ProximasEtapas() {
         >
           PROXIMAS ETAPAS
         </Heading>
-        <Text
-          flexDir={"row"}
-          color={useColorModeValue("black", "white")}
-          maxW={"100%"}
-          fontSize={{ base: "22px", md: "24px", lg: "28px", xl: "30px" }}
-        >
-          Contemplando las posibilidades económico financieras del club, y con
-          el objetivo de poder llegar a la concreción total de las obras, se
-          definieron una serie de etapas que se detallan a continuación.
-        </Text>
         {fasesData.map((fase, index) => (
           <Flex
             as={Stack}
             key={fase.title}
             direction={{ base: "column", md: index % 2 === 0 ? "row-reverse" : "row" }}
-            spacing={"20"}
+            spacing={{base: "0", sm: "2", md:"20"}}
             gap={{ base: 5, md: 10 }}
             alignItems="center"
+            pb={{base:"25px", md:"none"}}
           >
             {/* Listas */}
             <Box 
@@ -88,7 +79,6 @@ export default function ProximasEtapas() {
               display={"flex"}
               flexDirection={"column"}
               justifyContent={"center"}
-              
             >
               <Text fontWeight="bold" mb={2} textAlign={"left"}>
                 PROXIMAMENTE

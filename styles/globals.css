@@ -1,6 +1,5 @@
-@font-face {
-    font-family: 'Acumin Pro';
-    src: url('/fonts/Acumin-BdPro.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+@import url("https://use.typekit.net/jqp3ait.css");
+
+body {
+    font-family: 'Acumin Pro', sans-serif;
 }

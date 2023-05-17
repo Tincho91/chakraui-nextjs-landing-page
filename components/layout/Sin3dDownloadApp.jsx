@@ -57,11 +57,9 @@ export default function DownloadApp() {
             flexDir={"row"}
             color={useColorModeValue("black", "white")}
             maxW={"100%"}
-            fontSize={{ base: "22px", md: "24px", lg: "28px", xl: "30px" }}
+            fontSize={{ base: "20px", md: "22px", lg: "22px", xl: "24px" }}
           >
-            Contemplando las posibilidades económico financieras del club, y con
-            el objetivo de poder llegar a la concreción total de las obras, se
-            definieron una serie de etapas que se detallan a continuación.
+            Desde la app podrás comprar NFT’s de la cancha, comprar en la tienda virtual, acceder a tu credencial digital y mucho más!
           </Text>
           <Flex direction={{ base: "column", md: "row" }} gap={{ base: 'none', md: 20 }}>
             <Box
@@ -91,6 +89,7 @@ export default function DownloadApp() {
                   >
                     <CheckIcon
                       boxSize={5}
+                      p={1}
                       color="white"
                       bg="green.500"
                       borderRadius="full"

@@ -43,7 +43,7 @@ export default function Etapas() {
             top="50%"
             left="50%"
             transform="translate(-50%, -50%)"
-            fontSize="6xl"
+            fontSize={{base: "10vw", md:"8vw", lg:"80px"}}
             fontWeight="bold"
             color="white"
             textAlign="center"

@@ -104,13 +104,13 @@ const Beneficios = () => {
                 >
                   <Heading
                     textAlign="center"
-                    fontSize={{ base: '15px', sm: '5vw', md: '2.5vw', lg: "1.6vw" }}
+                    fontSize={{ base: '15px', sm: '5vw', md: '2.5vw', lg: "1.3rem" }}
                     fontWeight={"800"}
                   >
                     {benefit.title}
                   </Heading>
                   <Text
-                    fontSize={{ base: "11px" }}
+                    fontSize={{ base: "14px" }}
                     display={{ base: 'none', lg: 'block' }}
                     textAlign="center"
                     mt={2}

@@ -41,16 +41,6 @@ export default function EtapaActual() {
         >
           ETAPA ACTUAL
         </Heading>
-        <Text
-          flexDir={"row"}
-          color={useColorModeValue("black", "white")}
-          maxW={"100%"}
-          fontSize={{ base: "22px", md: "24px", lg: "28px", xl: "30px" }}
-        >
-          Contemplando las posibilidades económico financieras del club, y con
-          el objetivo de poder llegar a la concreción total de las obras, se
-          definieron una serie de etapas que se detallan a continuación.
-        </Text>
         <Flex direction={{ base: "column", md: "row" }}>
           <Box width={{ base: "100%", md: "50%" }}>
             <Text fontWeight="bold" mb={2} textAlign={"left"}>
@@ -82,6 +72,7 @@ export default function EtapaActual() {
                   <CheckIcon
                     boxSize={5}
                     color="white"
+                    p={1}
                     bg="green.500"
                     borderRadius="full"
                     mr={2}
@@ -96,6 +87,7 @@ export default function EtapaActual() {
             alignItems="center"
             justifyContent="center"
             width={{ base: "100%", md: "50%" }}
+            mt={{base: "2vh", sm: "none"}}
           >
             <Image
               src="/2024.png"

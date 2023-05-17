@@ -20,30 +20,6 @@ const Carousel = ({ images }) => {
 
   return (
     <Box position="relative" height="auto" width="full">
-      <IconButton
-        ref={navigationPrevRef}
-        aria-label="left-arrow"
-        variant="ghost"
-        position="absolute"
-        left={side}
-        top={top}
-        transform="translate(0%, -50%)"
-        zIndex={2}
-      >
-        <BiLeftArrowAlt size="40px" />
-      </IconButton>
-      <IconButton
-        ref={navigationNextRef}
-        aria-label="right-arrow"
-        variant="ghost"
-        position="absolute"
-        right={side}
-        top={top}
-        transform="translate(0%, -50%)"
-        zIndex={2}
-      >
-        <BiRightArrowAlt size="40px" />
-      </IconButton>
       <Swiper
         spaceBetween={15}
         slidesPerView={slidesPerView}

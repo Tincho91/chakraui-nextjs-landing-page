@@ -54,7 +54,7 @@ export default function ElProyecto() {
             flexDir={'row'}
             color={useColorModeValue("black", "white")}
             maxW={'100%'}
-            fontSize={{ base: "22px", md: "24px", lg: "28px", xl: "30px" }}
+            fontSize={{ base: "20px", md: "22px", lg: "22px", xl: "24px" }}
           >
             El objetivo del proyecto es juntar fondos a través de la venta de metros cuadrados de la cancha para la actualización, refuncionalización y ampliación del estadio Coloso Marcelo Bielsa.
           </Text>
@@ -66,8 +66,8 @@ export default function ElProyecto() {
             <Link href="/avances">
               <Button
                 backgroundColor={useColorModeValue("white", "transparent")}
-                color={useColorModeValue("black", "white")}
-                borderColor={useColorModeValue("black", "white")}
+                color={useColorModeValue("red.100", "white")}
+                borderColor={useColorModeValue("red.100", "white")}
                 fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
                 paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
                 paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
@@ -86,8 +86,8 @@ export default function ElProyecto() {
             <Link href="/colecta">
               <Button
                 backgroundColor={useColorModeValue("white", "transparent")}
-                color={useColorModeValue("black", "white")}
-                borderColor={useColorModeValue("black", "white")}
+                color={useColorModeValue("red.100", "white")}
+                borderColor={useColorModeValue("red.100", "white")}
                 fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
                 paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
                 paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}

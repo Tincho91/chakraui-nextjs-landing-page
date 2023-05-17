@@ -29,9 +29,6 @@ const FreeModeCarousel = ({ images }) => {
           delay: 2000,
           disableOnInteraction: false,
         }}
-        pagination={{
-          clickable: true,
-        }}
         modules={[FreeMode, Pagination, EffectCoverflow]}
         className="mySwiper"
 

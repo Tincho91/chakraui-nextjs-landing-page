@@ -129,22 +129,21 @@ export default function NivelDeColecta() {
                 duration={500}
               >
                 <Button
-                  backgroundColor={useColorModeValue("white", "transparent")}
-                  color={useColorModeValue("black", "white")}
-                  borderColor={useColorModeValue("black", "white")}
-                  fontSize={{ base: "13px", md: "lg", lg: "xl", xl: "2xl" }}
-                  paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
-                  paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
-                  borderWidth={1}
-                  rounded={"md"}
-                  width={{ base: "none", md: "100%" }}
-                  _hover={{
-                    bg: "red",
-                    borderColor: "red",
-                    color: "white",
-                  }}
-                  mt={{ base: "10px" }}
-                >
+                backgroundColor="red.100"
+                color="white"
+                borderColor="red.100"
+                fontSize={{ base: "11px", md: "lg", lg: "xl", xl: "2xl" }}
+                paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
+                paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
+                borderWidth={1}
+                rounded={"md"}
+                transition= "all 0.2s ease"
+                _hover={{
+                  backgroundColor: "red.200",
+                  borderColor: "red.200",
+                }}
+                mt={10}
+              >
                   PARTICIPAR
                 </Button>
               </ScrollLink>
