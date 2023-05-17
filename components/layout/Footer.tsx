@@ -8,7 +8,7 @@ import {
   Image,
   useBreakpointValue,
 } from '@chakra-ui/react';
-
+import { Link as ScrollLink } from "react-scroll";
 
 export default function Footer() {
   const brandImageSrc = useBreakpointValue({
@@ -37,10 +37,30 @@ export default function Footer() {
               </Box>
             </Stack>
             <Stack align={{ base: 'center', md: 'flex-start' }}>
-              <Link href={'#'}>El proyecto</Link>
-              <Link href={'#'}>Beneficios</Link>
-              <Link href={'#'}>Descarga la app</Link>
-              <Link href={'#'}>Preguntas frecuentes</Link>
+              <ScrollLink
+                to={'ElProyecto'}
+                smooth={true}
+                duration={500}
+              >
+                <Box cursor={"pointer"}>El proyecto</Box></ScrollLink>
+              <ScrollLink
+                to={'Beneficios'}
+                smooth={true}
+                duration={500}
+              >
+                <Box cursor={"pointer"}>Beneficios</Box></ScrollLink>
+              <ScrollLink
+                to={'Sin3dDownloadApp'}
+                smooth={true}
+                duration={500}
+              >
+                <Box cursor={"pointer"}>Descarga la app</Box></ScrollLink>
+              <ScrollLink
+                to={'Preguntas'}
+                smooth={true}
+                duration={500}
+              >
+                <Box cursor={"pointer"}>Preguntas frecuentes</Box></ScrollLink>
             </Stack>
             <Stack align={{ base: 'center', md: 'flex-start' }}>
               <Link href={'#'}>Términos y condiciones</Link>

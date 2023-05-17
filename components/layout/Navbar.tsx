@@ -15,7 +15,6 @@ import {
 import {
   HamburgerIcon,
   CloseIcon,
-  SunIcon,
   MoonIcon,
 } from "@chakra-ui/icons";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
@@ -166,6 +165,7 @@ const DesktopNav = () => {
             borderColor={navItem.active ? linkActiveColor : ""}
             cursor="pointer"
             _hover={{
+              cursor: "pointer",
               textDecoration: "none",
               color: linkHoverColor,
               borderBottom: linkActiveUnderline,
@@ -208,6 +208,7 @@ const MobileNavItem = ({ label, to }: NavItem) => {
         align={"center"}
         _hover={{
           textDecoration: "none",
+          cursor: "pointer",
         }}
       >
         <Text
