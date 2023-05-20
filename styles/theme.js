@@ -21,6 +21,15 @@ const colors = {
 }
 
 const theme = extendTheme({
+  components: {
+    Drawer: {
+      baseStyle: {
+        dialog: {
+          bg: "transparent",
+        },
+      },
+    },
+  },
   config: {
     initialColorMode: "light",
     useSystemColorMode: false,

@@ -5,12 +5,12 @@ import {
   IconButton,
   Button,
   Stack,
-  Collapse,
   Image,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
   useColorMode,
+  Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -18,7 +18,10 @@ import {
   MoonIcon,
 } from "@chakra-ui/icons";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
-import { Link as ScrollLink } from "react-scroll";
+import {
+  scroller,
+  Link as ScrollLink,
+} from "react-scroll";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -131,9 +134,19 @@ export default function Navbar() {
         </Stack>
       </Flex>
 
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
-      </Collapse>
+      <Drawer placement="top" onClose={onToggle} isOpen={isOpen} size="full">
+        <DrawerOverlay bg="rgba(255, 255, 255, 0.95)">
+          <DrawerContent >
+            <DrawerHeader borderBottomWidth="1px">
+              <DrawerCloseButton position="absolute" left={1} top={9} />
+              <Text fontSize="7vw" fontWeight="bold" textAlign="center">MENU</Text>
+            </DrawerHeader>
+            <DrawerBody >
+              <MobileNav onClose={onToggle} />
+            </DrawerBody>
+          </DrawerContent>
+        </DrawerOverlay>
+      </Drawer>
     </Box>
   );
 }
@@ -181,39 +194,50 @@ const DesktopNav = () => {
   );
 };
 
-const MobileNav = () => {
+const MobileNav: React.FC<MobileNavProps> = ({ onClose }) => {
   return (
     <Stack
-      bg={useColorModeValue("white", "gray.800")}
       p={4}
       display={{ md: "none" }}
+      bg="transparent"
     >
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <MobileNavItem key={navItem.label} {...navItem} onClose={onClose} />
       ))}
     </Stack>
   );
 };
 
-const MobileNavItem = ({ label, to }: NavItem) => {
+const MobileNavItem = ({ label, to, onClose }: NavItem & { onClose: () => void }) => {
+
+  const closeAndScroll = () => {
+    onClose();
+    scroller.scrollTo(to, {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
+
   return (
     <Stack spacing={4}>
       <Flex
         py={2}
+        onClick={closeAndScroll}
         as={ScrollLink}
         to={to}
         smooth={true}
         duration={500}
-        justify={"space-between"}
         align={"center"}
-        _hover={{
-          textDecoration: "none",
-          cursor: "pointer",
-        }}
+        cursor="pointer"
       >
         <Text
           fontWeight={600}
           color={useColorModeValue("gray.600", "gray.200")}
+          fontSize="6vw"
+          _hover={{
+            color: "red.100",
+          }}
         >
           {label}
         </Text>
@@ -226,6 +250,10 @@ interface NavItem {
   label: string;
   active?: boolean;
   to: string;
+}
+
+interface MobileNavProps {
+  onClose: () => void;
 }
 
 const NAV_ITEMS: Array<NavItem> = [

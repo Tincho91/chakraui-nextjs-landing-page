@@ -43,10 +43,15 @@ export default function Etapas() {
             top="50%"
             left="50%"
             transform="translate(-50%, -50%)"
-            fontSize={{base: "10vw", md:"8vw", lg:"80px"}}
-            fontWeight="bold"
             color="white"
             textAlign="center"
+            fontSize={{ base: '50px', md: '8vw', xl: '110px', }}
+            lineHeight={"0.9em"}
+            letterSpacing={"-0.01em"}
+            whiteSpace="nowrap"
+            css={{
+              fontVariationSettings: "'wght' 600, 'wdth' 50, 'slnt' 0",
+            }}
           >
             ETAPAS DEL DESARROLLO
           </Text>

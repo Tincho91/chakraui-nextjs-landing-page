@@ -43,34 +43,45 @@ export default function DownloadApp() {
           py={{ base: 10, md: 12 }}
           marginTop={"50px"}
         >
-          <Heading
-            fontFamily={"Acumin Bd Pro, sans-serif"}
-            fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
-            fontWeight={700}
+          <Text
+            fontSize={{ base: '50px', md: '8vw', xl: '100px', }}
             lineHeight={"0.9em"}
             letterSpacing={"-0.01em"}
             textAlign={"center"}
+            css={{
+              fontVariationSettings: "'wght' 600, 'wdth' 50, 'slnt' 0",
+            }}
           >
             DESCARGA LA APP
-          </Heading>
+          </Text>
           <Text
             flexDir={"row"}
             color={useColorModeValue("black", "white")}
             maxW={"100%"}
             fontSize={{ base: "20px", md: "22px", lg: "22px", xl: "24px" }}
           >
-            Desde la app podrás comprar NFT’s de la cancha, comprar en la tienda virtual, acceder a tu credencial digital y mucho más!
+            Desde la app podrás comprar NFT’s de la cancha, comprar en la tienda
+            virtual, acceder a tu credencial digital y mucho más!
           </Text>
-          <Flex direction={{ base: "column", md: "row" }} gap={{ base: 'none', md: 20 }}>
+          <Flex
+            direction={{ base: "column", md: "row" }}
+            gap={{ base: "none", md: 20 }}
+          >
             <Box
-              display="flex" justifyContent="center" alignItems="center"
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
               width={{ base: "100%", md: "50%" }}
-              transform={{ base: "translateX(-25%)", sm: "translateX(-15%)", md: "none"  }}
+              transform={{
+                base: "translateX(-25%)",
+                sm: "translateX(-15%)",
+                md: "none",
+              }}
             >
-              <Image 
-                src="/downloadapp.png" 
-                alt="Download App" 
-                maxH={{base: "400px", md: "500px"}}
+              <Image
+                src="/downloadapp.png"
+                alt="Download App"
+                maxH={{ base: "400px", md: "500px" }}
               />
             </Box>
             <Box width={{ base: "100%", md: "50%" }}>
@@ -102,9 +113,9 @@ export default function DownloadApp() {
               <Text mt={4} fontWeight="bold">
                 ENCONTRALA EN
               </Text>
-              <Flex 
-                mt={4} 
-                flexDirection={{base:"row", lg:"row"}}
+              <Flex
+                mt={4}
+                flexDirection={{ base: "row", lg: "row" }}
                 alignItems={"center"}
                 justifyContent={"center"}
               >

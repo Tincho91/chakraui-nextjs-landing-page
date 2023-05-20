@@ -61,17 +61,17 @@ export default function NivelDeColecta() {
       <Link href="/" color={"red"} fontWeight={"600"} fontSize={"20px"}>
         VOLVER ATRÁS
       </Link>
-      <Heading
-        fontFamily={"Acumin Bd Pro, sans-serif"}
-        fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
-        fontWeight={700}
+      <Text
+        fontSize={{ base: "50px", md: "8vw", xl: "100px" }}
         lineHeight={"0.9em"}
         letterSpacing={"-0.01em"}
         textAlign={"center"}
-        marginTop="20px"
+        css={{
+          fontVariationSettings: "'wght' 600, 'wdth' 50, 'slnt' 0",
+        }}
       >
         NIVEL DE COLECTA
-      </Heading>
+      </Text>
       <VStack spacing={10} mt={10}>
         <ProgressBar percentage={progressPercentage} />
         <Grid
@@ -85,7 +85,7 @@ export default function NivelDeColecta() {
             width="100%"
             rounded={"3xl"}
           />
-          <VStack 
+          <VStack
             alignItems={{ base: "center", md: "flex-start" }}
             justifyContent={{ md: "space-between" }}
             spacing={6}
@@ -123,27 +123,33 @@ export default function NivelDeColecta() {
                   </Text>
                 </Box>
               </Flex>
-              <ScrollLink
-                to={"Sin3dDownloadApp"}
-                smooth={true}
-                duration={500}
-              >
+              <ScrollLink to={"Sin3dDownloadApp"} smooth={true} duration={500}>
                 <Button
-                backgroundColor="red.100"
-                color="white"
-                borderColor="red.100"
-                fontSize={{ base: "11px", md: "lg", lg: "xl", xl: "2xl" }}
-                paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
-                paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
-                borderWidth={1}
-                rounded={"md"}
-                transition= "all 0.2s ease"
-                _hover={{
-                  backgroundColor: "red.200",
-                  borderColor: "red.200",
-                }}
-                mt={10}
-              >
+                  backgroundColor="red.100"
+                  color="white"
+                  borderColor="red.100"
+                  fontSize={{ base: "11px", md: "lg", lg: "xl", xl: "2xl" }}
+                  paddingX={{
+                    base: "25px",
+                    md: "30px",
+                    lg: "30px",
+                    xl: "30px",
+                  }}
+                  paddingY={{
+                    base: "20px",
+                    md: "25px",
+                    lg: "30px",
+                    xl: "35px",
+                  }}
+                  borderWidth={1}
+                  rounded={"md"}
+                  transition="all 0.2s ease"
+                  _hover={{
+                    backgroundColor: "red.200",
+                    borderColor: "red.200",
+                  }}
+                  mt={10}
+                >
                   PARTICIPAR
                 </Button>
               </ScrollLink>

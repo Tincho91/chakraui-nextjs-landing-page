@@ -40,16 +40,17 @@ export default function Etapabilidad() {
           py={{ base: 10, md: 12 }}
           marginTop={'50px'}
         >
-          <Heading
-            fontFamily={"Acumin Bd Pro, sans-serif"}
-            fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
-            fontWeight={700}
+          <Text
+            fontSize={{ base: '50px', md: '8vw', xl: '100px', }}
             lineHeight={"0.9em"}
             letterSpacing={"-0.01em"}
             textAlign={"center"}
+            css={{
+              fontVariationSettings: "'wght' 600, 'wdth' 50, 'slnt' 0",
+            }}
           >
             ETAPABILIDAD
-          </Heading>
+          </Text>
           <Text
             flexDir={'row'}
             color={useColorModeValue("black", "white")}

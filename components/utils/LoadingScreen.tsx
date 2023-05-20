@@ -7,17 +7,17 @@ const loadingDuration = 8000;
 
 const images = [
   // Agregar acá las imágenes
-  "brand-small.png",
-  "redstar.png",
+  "image-1.png",
+  "image-2.png",
+  "image-3.png",
+  "image-4.png",
+  "image-5.png",
+  "image-6.png",
+  "image-7.png",
 ];
 
 const getRandomImage = () => {
   return images[Math.floor(Math.random() * images.length)];
-};
-
-const getRandomAnimation = () => {
-  const animations = ["scale", "rotate", "translate"];
-  return animations[Math.floor(Math.random() * animations.length)];
 };
 
 const getRandomOpacity = () => {
@@ -25,7 +25,7 @@ const getRandomOpacity = () => {
 };
 
 const getRandomImageCount = () => {
-  return Math.floor(Math.random() * 20) + 10;
+  return Math.floor(Math.random() * 14);
 };
 
 const calculateYear = (percentage: number) => {
@@ -36,8 +36,8 @@ const calculateYear = (percentage: number) => {
 
 const getRandomPosition = () => {
   return {
-    top: Math.random() * 100 + "vh",
-    left: Math.random() * 100 + "vw",
+    top: `${Math.random() * 100}%`,
+    left: `${Math.random() * 100}%`,
   };
 };
 
@@ -123,7 +123,11 @@ const LoadingScreen = ({ onSkip, onComplete }: { onSkip: () => void; onComplete:
             key={index}
             src={imageElement.image}
             alt="Random image"
-            style={{ position: "absolute", ...imageElement.position }}
+            style={{
+              position: "absolute",
+              ...imageElement.position,
+              maxWidth: "60vw"  // limit the width to 60% of the viewport width
+            }}
             initial={{ opacity: 0 }}
             animate={{ opacity: imageElement.opacity }}
             exit={{ opacity: 0 }}

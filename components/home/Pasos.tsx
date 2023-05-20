@@ -48,7 +48,7 @@ interface StepBoxProps {
 
 const StepBox: React.FC<StepBoxProps> = ({ step, index, stepNumberBgColor, bgColor }) => {
   return (
-    <Box key={index} bg={bgColor} p={5} position="relative" mb={{base: "20px", sm:"none"}}>
+    <Box key={index} bg={bgColor} p={5} position="relative" mb={{ base: "20px", sm: "none" }}>
       <Text
         position="absolute"
         top="-35px"
@@ -67,9 +67,16 @@ const StepBox: React.FC<StepBoxProps> = ({ step, index, stepNumberBgColor, bgCol
       >
         {index + 1}
       </Text>
-      <Heading as="h3" size="md" mb="2" textAlign="center">
+      <Text 
+        mb="2" 
+        textAlign="center" 
+        css={{
+          fontVariationSettings: "'wght' 600, 'wdth' 50, 'slnt' 0",
+        }}
+        fontSize={{ base: "25px", md: "30px", lg: "30px", xl: "35px" }}
+      >
         {step.title}
-      </Heading>
+      </Text>
       <Text fontSize="sm" textAlign="center">
         {step.description}
       </Text>
@@ -97,23 +104,22 @@ export default function Pasos() {
             marginTop={"50px"}
           >
             <Text
-              fontFamily={"Acumin Bd Pro, sans-serif"}
               fontSize={{ base: "18px", md: "23px", lg: "25px", xl: "30px" }}
               fontWeight={700}
             >
               🤔 PASO A PASO
             </Text>
-            <Heading
-              fontFamily={"Acumin Bd Pro, sans-serif"}
-              fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
-              fontWeight={700}
+            <Text
+              fontSize={{ base: '50px', md: '8vw', xl: '100px', }}
               lineHeight={"0.9em"}
               letterSpacing={"-0.01em"}
               textAlign={"center"}
-              pb={"5vh"}
+              css={{
+                fontVariationSettings: "'wght' 600, 'wdth' 50, 'slnt' 0",
+              }}
             >
               EL PROYECTO
-            </Heading>
+            </Text>
             <Grid
               templateColumns={{
                 base: "repeat(1, 1fr)",
@@ -129,7 +135,7 @@ export default function Pasos() {
                   index={index}
                   stepNumberBgColor={stepNumberBgColor}
                   bgColor={bgColor}
-                  
+
                 />
               ))}
             </Grid>

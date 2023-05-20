@@ -49,7 +49,7 @@ const Beneficios = () => {
 
   return (
     <Element name="Beneficios">
-      <Container bg="green.100" py={9} px={5} maxWidth={"100%"}>
+      <Container bg="green.100" py={10} px={5} maxWidth={"100%"}>
         <Grid
           templateColumns={`repeat(${columns}, 1fr)`}
           gridColumnGap={0}
@@ -59,8 +59,17 @@ const Beneficios = () => {
           color={"white"}
         >
           <Box gridColumn="span 2" textAlign={{ base: 'center', md: 'left' }} pl='4'>
-            <Heading fontSize={{ base: '40px', md: '7vw', xl: '80px', }}>BENEFICIOS</Heading>
-            <Text fontSize="2xl">
+            <Text 
+            fontSize={{ base: '70px', md: '9vw', xl: '120px', }}
+            lineHeight={"0.9em"}
+            letterSpacing={"-0.01em"}
+            css={{
+              fontVariationSettings: "'wght' 600, 'wdth' 50, 'slnt' 0",
+            }}
+            >
+              BENEFICIOS
+            </Text>
+            <Text fontSize="2xl" >
               Explora todos los beneficios de invertir en el club.
             </Text>
           </Box>
@@ -102,18 +111,21 @@ const Beneficios = () => {
                   paddingTop={{ base: '30px', md: '60px', lg: "50px" }}
                   width="100%"
                 >
-                  <Heading
+                  <Text
                     textAlign="center"
-                    fontSize={{ base: '15px', sm: '5vw', md: '2.5vw', lg: "1.3rem" }}
-                    fontWeight={"800"}
+                    fontSize={{ base: '6vw', sm: '6vw', md: '3vw', lg: "2rem" }}
+                    css={{
+                      fontVariationSettings: "'wght' 600, 'wdth' 50, 'slnt' 0",
+                    }}
                   >
                     {benefit.title}
-                  </Heading>
+                  </Text>
                   <Text
-                    fontSize={{ base: "14px" }}
+                    fontSize={{ base: "12px", xl: "14px" }}
                     display={{ base: 'none', lg: 'block' }}
                     textAlign="center"
                     mt={2}
+                    lineHeight="1.2"
                   >
                     {benefit.description}
                   </Text>

@@ -15,12 +15,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <ChakraProvider theme={theme}>
       <Global
         styles={css`
-          @import url('https://fonts.adobe.com/fonts/acumin-variable?vf-axes=slnt%2C0%2Cwdth%2C57%2Cwght%2C700&vf-font-size=128&vf-font=AcuminVF#fonts-section');
-          body {
-            font-family: "acumin-variable",sans-serif;
-            font-variation-settings: 'wght' 700, 'wdth' 57, 'slnt' 0;
-          }
-        `}
+      @font-face {
+        font-family: 'AcuminVariable';
+        font-style: normal;
+        font-weight: normal;
+        font-display: swap;
+        src: url("/fonts/Acumin-Variable.ttf") format('truetype');
+      }
+      body {
+        font-family: 'AcuminVariable', sans-serif;
+      }
+    `}
       />
       <Box minHeight="100vh" width="100%" overflowX={"hidden"}>
         <Navbar />

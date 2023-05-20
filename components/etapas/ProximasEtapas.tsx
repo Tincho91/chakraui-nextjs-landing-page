@@ -53,16 +53,17 @@ export default function ProximasEtapas() {
         py={{ base: 10, md: 12 }}
         marginTop={"50px"}
       >
-        <Heading
-          fontFamily={"Acumin Bd Pro, sans-serif"}
-          fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
-          fontWeight={700}
+        <Text
+          fontSize={{ base: '50px', md: '8vw', xl: '100px', }}
           lineHeight={"0.9em"}
           letterSpacing={"-0.01em"}
           textAlign={"center"}
+          css={{
+            fontVariationSettings: "'wght' 600, 'wdth' 50, 'slnt' 0",
+          }}
         >
           PROXIMAS ETAPAS
-        </Heading>
+        </Text>
         {fasesData.map((fase, index) => (
           <Flex
             as={Stack}
@@ -83,16 +84,17 @@ export default function ProximasEtapas() {
               <Text fontWeight="bold" mb={2} textAlign={"left"}>
                 PROXIMAMENTE
               </Text>
-              <Heading
-                fontFamily={"Acumin Bd Pro, sans-serif"}
-                fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
-                fontWeight={700}
+              <Text
+                fontSize={{ base: '50px', md: '8vw', xl: '100px', }}
                 lineHeight={"0.9em"}
                 letterSpacing={"-0.01em"}
+                css={{
+                  fontVariationSettings: "'wght' 600, 'wdth' 50, 'slnt' 0",
+                }}
                 textAlign={"left"}
               >
                 {fase.title}
-              </Heading>
+              </Text>
               <UnorderedList textAlign="left" mt={4} spacing={2}>
                 {fase.listItems.map((item) => (
                   <ListItem

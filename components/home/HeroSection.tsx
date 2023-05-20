@@ -1,6 +1,6 @@
 import {
   Box,
-  Heading,
+  Text,
   Container,
   Button,
   Stack,
@@ -27,16 +27,17 @@ const HeroSection = () => {
           spacing={{ base: 8, md: 8 }}
           py={{ base: 10, md: 12 }}
         >
-          <Heading
-            fontFamily={"Acumin Bd Pro, sans-serif"}
-            fontSize={{ base: "10vw", sm: "8vw", md: "65px", lg: "80px" }}
-            fontWeight={700}
+          <Text
+            fontSize={{ base: '50px', md: '8vw', xl: '100px', }}
             lineHeight={"0.9em"}
             letterSpacing={"-0.01em"}
             textAlign={"center"}
+            css={{
+              fontVariationSettings: "'wght' 600, 'wdth' 50, 'slnt' 0",
+            }}
           >
             COMPRA MT2 DE LA CANCHA Y AYUDA AL CLUB
-          </Heading>
+          </Text>
           <Stack
             direction="row"
             spacing={10}
@@ -51,7 +52,7 @@ const HeroSection = () => {
                 color="white"
                 borderColor="red.100"
                 fontSize={{ base: "11px", md: "lg", lg: "xl", xl: "2xl" }}
-                paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
+                paddingX={{ base: "15px", md: "30px", lg: "30px", xl: "30px" }}
                 paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
                 borderWidth={1}
                 rounded={"md"}
@@ -73,7 +74,7 @@ const HeroSection = () => {
                 color={useColorModeValue("black", "white")}
                 borderColor={useColorModeValue("black", "white")}
                 fontSize={{ base: "11px", md: "lg", lg: "xl", xl: "2xl" }}
-                paddingX={{ base: "25px", md: "30px", lg: "30px", xl: "30px" }}
+                paddingX={{ base: "15px", md: "30px", lg: "30px", xl: "30px" }}
                 paddingY={{ base: "20px", md: "25px", lg: "30px", xl: "35px" }}
                 borderWidth={1}
                 rounded={"md"}
